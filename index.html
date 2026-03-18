@@ -1,13 +1,84 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Färdtjänst Kronoberg</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <title>Färdtjänst Kronoberg</title>
+</head>
+
+<body>
+    <!-- Hoppa till huvudinnehållet -->
+  <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+  <div class="container">
+    <header>
+      <div class="header-container">
+        <h1><a href="/">Färdtjänst Kronoberg</a></h1>
+        <nav class="menu" id="menu">
+          <ul>
+            <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
+            <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
+            <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
+            <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
+            <li><a href="/minasidor" class="nav-link">Mina sidor</a></li>
+          </ul>
+        </nav>
+        <!-- Mobilmeny (Hambugermeny) --->
+        <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
+          &#9776;
+        </button>
+      </div>
+    </header>
+      <main id="main-content">
+
+        <a href="/logout" class="logout">Logga ut</a>
+
+        <section class="top-section">
+          <h2>Var vill du resa idag?</h2>
+          <a href="/boka-resa">Boka resa</a>
+          </section>
+
+          <section class="index-bookings">
+            <h2>Mina bokade resor</h2>
+            <div id="trip1" class="trip2">
+              <a href="/mina-bokade-resor#">Bokningsinformation</a>
+            </div>
+            <div id="trip2" class="trip2">
+              <a href="/mina-bokade-resor#">Bokningsinformation</a>
+            </div>
+          </section>
+
+          <section class="index-faq">
+            <h2>Vanliga frågor</h2>
+            <p>Här hittar du svar på de vanligaste frågorna om färdtjänst - snabbt och enkelt!</p>
+            <a href="/vanliga-fragor">Vanliga frågor</a>
+          </section>
+
+          <section class="index-contact">
+            <h2>Vi hjälper dig</h2>
+            <p>Har du frågor om färdtjänst, regler, ansökan eller bokning? Kontakta oss  så hjälper vi dig!</p>
+            <a href="/kontakt">Kontakta oss</a>
+          </section>
+             </main>
+
+          <footer>
+            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+            <nav class="nav-footer">
+              <ul>
+                <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+                <li><a href="/tillganglighetsredogorelse" class="footer-link">Mina bokade resor</a></li>
+              </ul>
+            </nav>
+          </footer>
+   
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
