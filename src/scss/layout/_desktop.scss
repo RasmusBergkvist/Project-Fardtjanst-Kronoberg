@@ -1,0 +1,42 @@
+@use '../variables';
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: variables.$primary-color;
+    height: 100px;
+
+    h1 {
+        a {
+            text-decoration: none;
+            color: variables.$text-color-light;
+            padding-left: 1.5rem;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+nav {
+    ul {
+        li {
+            display: inline;
+            padding-inline: 1.5rem;
+            
+        }
+    }
+}
+
+.nav-link {
+    color: variables.$text-color-light;
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+
+}

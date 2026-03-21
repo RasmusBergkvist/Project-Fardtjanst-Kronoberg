@@ -16,7 +16,7 @@ export default defineConfig({
         ombokadresa: resolve(__dirname, "ombokad-resa.html"),
         avboka: resolve(__dirname, "avboka-resa.html"),
         avbokadresa: resolve(__dirname, "avbokad-resa.html"),
-        tillganglighetsredogorelse: resolve(__dirname, "tillganglighetsredogorelse.html")
+        tillganglighetsredogorelse: resolve(__dirname, "tillganglighetsredogorelse.html"),
         logout: resolve(__dirname, "loggaut.html")
       }
     }

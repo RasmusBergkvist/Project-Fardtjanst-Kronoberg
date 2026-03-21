@@ -1,0 +1,29 @@
+@use './variables';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    font-family: variables.$font-stack
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: variables.$h1-size;
+}
+
+h2 {
+    font-size: variables.$h2-size;
+}
+
+h3 {
+    font-size: variables.$h3-size;
+}
+
