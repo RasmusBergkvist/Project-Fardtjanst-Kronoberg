@@ -27,3 +27,26 @@ h3 {
     font-size: variables.$h3-size;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$primary-color;
+    height: 150px;
+
+    h3 {
+        padding-top: 1rem;
+        a {
+            color: variables.$text-color-light;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
