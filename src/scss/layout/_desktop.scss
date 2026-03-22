@@ -47,3 +47,50 @@ nav {
     align-items: center;
     
 }
+
+.index-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+
+    h2 {
+        color: variables.$primary-color;
+        margin-bottom: 1rem;
+    }
+
+    .trips {
+        display: flex;
+        justify-content: center;
+        gap:1.5rem;
+       
+    }
+
+    .trip-item {
+        display: flex;
+        flex-direction: column;
+        height: 270px;
+        width: 350px;
+        border: 1.15px solid variables.$primary-color;
+        border-radius: 10px;
+        background-color: white;
+        padding: 1rem;
+        line-height: 1.6;
+        
+    }
+        } a, img {
+        display: inline-flex;
+        align-items: center;
+        margin-top: auto;
+        gap: 0.5rem;
+        color: variables.$text-color-dark;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        
+        
+    
+    
+}

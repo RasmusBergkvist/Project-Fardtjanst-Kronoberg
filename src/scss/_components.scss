@@ -14,7 +14,6 @@
     flex-direction: column;
     color: variables.$text-color-light;
     text-shadow: 1px 1px 2px black;
-    font-size: va;
 
     a {
         background-color: variables.$button-color-book;
@@ -29,6 +28,28 @@
             background-color: variables.$primary-color;
             
         }
+    
 
+    } a, img {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+    }
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.4rem;
+    margin-right: 1rem;
+    margin-top: 1rem; 
+    text-decoration: none;
+    color: variables.$text-color-dark;
+
+    &:hover {
+        text-decoration: underline;
+        font-weight: 500;
     }
 }

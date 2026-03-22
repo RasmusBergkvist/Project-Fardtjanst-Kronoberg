@@ -15,6 +15,10 @@ html, body {
     min-height: 100vh;
 }
 
+main {
+    background-color: variables.$background-color;
+}
+
 h1 {
     font-size: variables.$h1-size;
 }
