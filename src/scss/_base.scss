@@ -4,11 +4,16 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    list-style: none;
-}
+   
 
 body {
-    font-family: variables.$font-stack
+    font-family: variables.$font-stack;
+    line-height: 1.6;
+    list-style: none;
+ 
+}
+
+
 }
 
 html, body {
@@ -31,26 +36,14 @@ h3 {
     font-size: variables.$h3-size;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: variables.$primary-color;
-    height: 150px;
-
-    h3 {
-        padding-top: 1rem;
-        a {
-            color: variables.$text-color-light;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+p {
+  font-size: variables.$text-size;
+  max-width: 65ch;
 }
+
+
+
+
 
 
 

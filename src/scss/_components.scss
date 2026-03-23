@@ -53,3 +53,11 @@
         font-weight: 500;
     }
 }
+
+.phone {
+    border-radius: 50%;
+    padding: 5px;
+    width: 34px;
+    height: 34px;
+    background-color: variables.$button-color-book;
+}

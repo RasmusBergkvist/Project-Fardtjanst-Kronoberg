@@ -12,7 +12,7 @@
             text-decoration: none;
             color: variables.$text-color-light;
             padding-left: 1.5rem;
-            
+
             &:hover {
                 text-decoration: underline;
             }
@@ -21,32 +21,9 @@
 
 }
 
-nav {
-    ul {
-        li {
-            display: inline;
-            padding-inline: 1.5rem;
-            
-        }
-    }
-}
 
-.nav-link, .footer-link {
-    color: variables.$text-color-light;
-    text-decoration: none;
-    
-    &:hover {
-        text-decoration: underline;
-    }
 
-}
 
-.footer-link {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    
-}
 
 .index-booking {
     display: flex;
@@ -62,8 +39,8 @@ nav {
     .trips {
         display: flex;
         justify-content: center;
-        gap:1.5rem;
-       
+        gap: 1.5rem;
+
     }
 
     .trip-item {
@@ -75,22 +52,110 @@ nav {
         border-radius: 10px;
         background-color: white;
         padding: 1rem;
-        line-height: 1.6;
-        
-    }
-        } a, img {
-        display: inline-flex;
-        align-items: center;
-        margin-top: auto;
-        gap: 0.5rem;
-        color: variables.$text-color-dark;
-        text-decoration: none;
 
-        &:hover {
-            text-decoration: underline;
+
+    }
+}
+
+a,
+img {
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+    gap: 0.5rem;
+    color: variables.$text-color-dark;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+
+}
+
+.index-help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    h2 {
+        color: variables.$primary-color;
+        margin-bottom: 1rem;
+    }
+
+    .faq-contact {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+    }
+
+    .faq-box,
+    .contact-box {
+        display: flex;
+        flex-direction: column;
+        height: 210px;
+        width: 350px;
+        background-color: variables.$box-color;
+        border: 1.15px solid variables.$primary-color;
+        border-radius: 10px;
+        padding: 1rem;
+
+
+
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
         }
-        
-        
-    
-    
+
+        a {
+            display: flex;
+            margin: 0 auto;
+            margin-top: auto;
+            background-color: variables.$button-color-book;
+            color: variables.$text-color-light;
+            padding: 0.5rem 1.2rem;
+            border-radius: 15px;
+
+            &:hover {
+                background-color: variables.$primary-color;
+            }
+
+        }
+
+
+    }
+
+
+}
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$primary-color;
+    height: 150px;
+    line-height: 1;
+
+    h3 {
+        padding-block: 1rem;
+
+        a {
+            color: variables.$text-color-light;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- Hoppa till huvudinnehållet -->
+  <!-- Hoppa till huvudinnehållet -->
   <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
   <div class="container">
     <header>
@@ -35,66 +35,75 @@
         </button>
       </div>
     </header>
-      <main id="main-content">
+    <main id="main-content">
 
-        <section class="hero">
-          <div class="hero-box">
+      <section class="hero">
+        <div class="hero-box">
           <h2>Vart vill du resa idag?</h2>
           <a href="/boka-resa"><img src="./icons/ticket.svg" alt="biljett till resa">Boka resa</a>
-          </div>
-           <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga ut</a>
-          </section>
-         
-          <section class="index-booking">
-            <h2>Mina bokade resor</h2>
-            <div class="trips">
-            <div id="trip-item" class="trip-item">
-              <p><strong>Bokningsnummer:</strong> 1115</p>
-              <br>
-              <p><strong>Från: </strong> Älmhult</p>
-              <p><strong>Till: </strong> Liatorp</p>
-              <br>
-              <p><strong>Avresa:</strong> 14 mars klockan 18.00</p>
-              <p><strong>Återresa:</strong> 14 mars klockan 21.00</p>
-              <br>
-              <a href="/mina-bokade-resor#"><img src="./icons/link.svg" alt="ikon av en kedjelänk">Bokningsinformation</a>
-            </div>
-            <div id="trip-item" class="trip-item">
-              <p><strong>Bokningsnummer:</strong> 1102</p>
-              <br>
-              <p><strong>Från: </strong> Älmhult</p>
-              <p><strong>Till: </strong> Ljungby</p>
-              <br>
-              <p><strong>Avresa:</strong> 4 mars  klockan 08.00</p>
-              <br>
-              <a href="/mina-bokade-resor#"><img src="./icons/link.svg" alt="ikon av en kedjelänk">Bokningsinformation</a>
-            </div>
-            </div>
-          </section>
+        </div>
+        <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
+          ut</a>
+      </section>
 
-          <section class="index-faq">
-            <h2>Vanliga frågor</h2>
+      <section class="index-booking">
+        <h2>Mina bokade resor</h2>
+        <div class="trips">
+          <article id="trip-item" class="trip-item">
+            <h3>Biljett: #1115</h3>
+            <br>
+            <p><strong>Från: </strong> Älmhult</p>
+            <p><strong>Till: </strong> Liatorp</p>
+            <br>
+            <p><strong>Avresa:</strong> 14 mars klockan 18.00</p>
+            <p><strong>Återresa:</strong> 14 mars klockan 21.00</p>
+            <br>
+            <a href="/mina-bokade-resor#"><img src="./icons/link.svg" alt="ikon av en kedjelänk">Bokningsinformation</a>
+          </article>
+          <article id="trip-item" class="trip-item">
+            <h3>Biljett: #1102</h3>
+            <br>
+            <p><strong>Från: </strong> Älmhult</p>
+            <p><strong>Till: </strong> Ljungby</p>
+            <br>
+            <p><strong>Avresa:</strong> 4 mars klockan 08.00</p>
+            <br>
+            <a href="/mina-bokade-resor#"><img src="./icons/link.svg" alt="ikon av en kedjelänk">Bokningsinformation</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="index-help">
+        <h2>Behöver du hjälp?</h2>
+
+        <div class="faq-contact">
+
+          <article class="faq-box">
+            <h3><img src="./icons/questionmark.svg" alt="ikon på ett frågetecken"> Vanliga frågor</h3>
             <p>Här hittar du svar på de vanligaste frågorna om färdtjänst - snabbt och enkelt!</p>
             <a href="/vanliga-fragor">Vanliga frågor</a>
-          </section>
+          </article>
 
-          <section class="index-contact">
-            <h2>Vi hjälper dig</h2>
-            <p>Har du frågor om färdtjänst, regler, ansökan eller bokning? Kontakta oss  så hjälper vi dig!</p>
+          <article class="contact-box">
+            <h3><img src="./icons/phone.svg" alt="icon på en telefon" class="phone">Kontakta oss</h3>
+            <p>Har du frågor om färdtjänst, regler, ansökan eller bokning? Kontakta oss så hjälper vi dig!</p>
             <a href="/kontakt">Kontakta oss</a>
-          </section>
-             </main>
+          </article>
 
-          <footer>
-            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
-            <nav class="nav-footer">
-              <ul>
-                <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
-                <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
-              </ul>
-            </nav>
-          </footer>
-   
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+      <nav class="nav-footer">
+        <ul>
+          <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+          <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
+        </ul>
+      </nav>
+    </footer>
+
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>
