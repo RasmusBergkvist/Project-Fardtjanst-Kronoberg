@@ -61,3 +61,13 @@
     height: 34px;
     background-color: variables.$button-color-book;
 }
+
+.mobile-menu-button {
+    font-size: 2rem;
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    color: variables.$text-color-light;
+    z-index: 9999;
+    
+}

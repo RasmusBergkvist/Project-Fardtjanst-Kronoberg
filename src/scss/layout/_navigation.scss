@@ -5,15 +5,16 @@ nav {
         li {
             display: inline;
             padding-inline: 1.5rem;
-            
+
         }
     }
 }
 
-.nav-link, .footer-link {
+.nav-link,
+.footer-link {
     color: variables.$text-color-light;
     text-decoration: none;
-    
+
     &:hover {
         text-decoration: underline;
     }
@@ -21,8 +22,67 @@ nav {
 }
 
 .footer-link {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+}
+
+
+/****************************************/
+/************Hambugermeny***************/
+/**************************************/
+@media screen and (max-width:1024px) {
+    .container .menu {
+        height: 100%;
+    }
+    .menu {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        min-height: 100vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: variables.$mobile-menu-color;
+        z-index: 995;
+
+
+        transform: translateX(100%);
+        transition: transform 0.45s ease-out;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin-top: 150px;
+
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            display: block;
+            text-align: left;
+
+        }
+
+    }
+
+    .menu.active {
+        transform: translateX(0);
+
+    }
 }

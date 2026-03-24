@@ -1,0 +1,9 @@
+@use '../variables';
+
+@media screen and (max-width:1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+}
