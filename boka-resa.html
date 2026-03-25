@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Färdtjänst Kronoberg</title>
 </head>
 
@@ -61,34 +62,56 @@
 
                     <fieldset>
                         <legend>Hur vill du resa?</legend>
-                        
+
                         <div class="radio-style">
                             <label for="trip-oneway">
-                                <input type="radio" id="trip-oneway" name="trip" required checked>
+                                <input type="radio" id="trip-oneway" name="trip" value="oneway" required checked>
+                                <span class="material-symbols-outlined">trending_flat</span>
                                 <span>Enkel resa</span>
                             </label>
 
                             <label for="trip-return">
-                                <input type="radio" id="trip-return" name="trip" required>
+                                <input type="radio" id="trip-return" name="trip" value="return" required>
+                                <span class="material-symbols-outlined">sync_alt</span>
                                 <span>Tur och retur</span>
                             </label>
                         </div>
 
-                        <label for="from-address">Åka från (adress och ort)</label>
-                        <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" required>
+                        <div class="trip-details">
+                            <label for="from-address">
+                                <span class="material-symbols-outlined">home_pin</span>
+                                <span>Åka från (adress och ort)</span>
+                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö"
+                                    required>
+                            </label>
 
 
-                        <label for="to-address">Resa till (adress och ort)</label>
-                        <input type="text" id="to-address" name="to-address" placeholder="Ex. Smultronvägen 55, Älmhult"
-                            required>
+                            <label for="to-address">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <span>Resa till (adress och ort)</span>
+                                <input type="text" id="to-address" name="to-address"
+                                    placeholder="Ex. Smultronvägen 55, Älmhult" required>
+                            </label>
 
 
-                        <label for="departure-time">Välj datum och tid för avresa </label>
-                        <input type="datetime-local" id="departure-time" name="departure-time">
 
 
-                        <label for="return-time">Välj datum och tid för återresa</label>
-                        <input type="datetime-local" id="return-time" name="return-time">
+                            <label for="departure-time">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
+                                <input type="datetime-local" id="departure-time" name="departure-time">
+                            </label>
+                        </div>
+
+
+                        <div id="returning-trip" class="hidden">
+                            <label for="return-time">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span>Välj datum och tid för återresa i kaledern nedanför</span>
+                                <input type="datetime-local" id="return-time" name="return-time">
+                            </label>
+
+                        </div>
                     </fieldset>
 
                     <fieldset>
@@ -112,8 +135,8 @@
 
 
                         <label for="other-aid-message">Annat hjälpmedel</label>
-                        <textarea id="other-aid-message" name="other-aid-message"
-                            placeholder="Beskriv hjälpmedel"></textarea>
+                        <textarea id="other-aid-message" name="other-aid-message" placeholder="Beskriv hjälpmedel"
+                            rows="5"></textarea>
                     </fieldset>
 
                     <fieldset>
@@ -153,7 +176,10 @@
                             <option value="monthly">Samma dag och tid varje månad</option>
                         </select>
                     </fieldset>
-                    <input type="submit" name="book-trip" id="book-trip" value="Boka resa">
+                    <button type="submit" class="send-booking" name="bookButton" value="Boka resa"
+                        aria-label="Boka resa">
+                        <img src="./icons/ticket.svg" alt=""> Boka resa
+                    </button>
                 </form>
 
 

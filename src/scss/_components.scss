@@ -1,5 +1,24 @@
 @use './variables';
 
+@mixin book-button {
+    background-color: variables.$button-color-book;
+    color: variables.$text-color-light;
+    font-size: variables.$text-size;
+    padding: 0.7rem 1.6rem;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 1rem;
+    text-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+        background-color: variables.$primary-color;
+    }
+}
+
 .hero-box {
     background-image: url('/images/hero.webp');
     background-size: cover;
@@ -16,25 +35,7 @@
     text-shadow: 1px 1px 2px black;
 
     a {
-        background-color: variables.$button-color-book;
-        color: variables.$text-color-light;
-        padding: 0.7rem 1.6rem;
-        border-radius: 15px;
-        text-decoration: none;
-        margin-top: 1rem;
-        text-shadow: none;
-
-        &:hover {
-            background-color: variables.$primary-color;
-            
-        }
-    
-
-    } a, img {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        
+        @include book-button;
     }
 }
 
@@ -44,7 +45,7 @@
     justify-content: end;
     gap: 0.4rem;
     margin-right: 1rem;
-    margin-top: 1rem; 
+    margin-top: 1rem;
     text-decoration: none;
     color: variables.$text-color-dark;
 
@@ -69,5 +70,18 @@
     background-color: transparent;
     color: variables.$text-color-light;
     z-index: 9999;
-    
+
+}
+
+.send-booking {
+    @include book-button;
+    display: flex;
+    margin: 2rem auto
+}
+
+.material-symbols-outlined {
+  font-size: 24px; 
+  font-weight: 500;
+  vertical-align: middle;
+  color: black
 }

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.addEventListener('click', () => {
         menu.classList.toggle('active')
 
-        const isOpen =  menu.classList.contains('active');
+        const isOpen = menu.classList.contains('active');
 
         if (isOpen) {
             menuButton.innerHTML = '✕';
@@ -25,4 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+});
+
+/** Toogla vid returresa */
+const radioButtons = document.querySelectorAll('input[name="trip"]');
+const returningTrip = document.querySelector('#returning-trip');
+
+radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', () => {
+        if (radioButton.value === 'return') {
+            returningTrip.classList.remove('hidden');
+        } else if (radioButton.value === 'oneway') {
+            returningTrip.classList.add('hidden');
+        }
+    });
 });
