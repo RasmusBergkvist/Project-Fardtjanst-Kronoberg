@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Färdtjänst Kronoberg</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="skip-link-wrapper">
+            <!-- Hoppa till sidans innehåll -->
+            <a href="#main-content" class="skip-link">Hoppa till sidans innehåll</a>
+        </div>
+
+        <header>
+
+            <div class="header-container">
+                <h1><a href="/">Färdtjänst Kronoberg</a></h1>
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
+                        <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
+                        <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
+                        <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
+                        <li><a href="/minasidor" class="nav-link">Mina sidor</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobilmeny (Hambugermeny) -->
+                <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li><a href="/">Startsida</a><span class="slash">/</span></li>
+                    <li class="current-page" aria-current="page">Boka resa</li>
+                </ol>
+            </nav>
+            <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
+                ut</a>
+        </div>
+        <main id="main-content">
+
+            <section class="book">
+                <h2>Boka resa</h2>
+
+                <form>
+
+                    <fieldset>
+                        <legend>Hur vill du resa?</legend>
+                        <input type="radio" id="trip-oneway" name="trip" required checked>
+                        <label for="trip-oneway">Enkel resa</label>
+
+                        <input type="radio" id="trip-return" name="trip" required>
+                        <label for="trip-return">Tur och retur</label>
+
+                        <label for="from-address">Åka från (adress och ort)</label>
+                        <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" required>
+
+
+                        <label for="to-address">Resa till (adress och ort)</label>
+                        <input type="text" id="to-address" name="to-address" placeholder="Ex. Smultronvägen 55, Älmhult"
+                            required>
+
+
+                        <label for="departure-time">Välj datum och tid för avresa </label>
+                        <input type="datetime-local" id="departure-time" name="departure-time">
+
+
+                        <label for="return-time">Välj datum och tid för återresa</label>
+                        <input type="datetime-local" id="return-time" name="return-time">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Hjälpmedel</legend>
+                        <span>Valfritt</span>
+                        <p>Välj alternativ om du behöver något hjälpmedel eller stöd på din resa</p>
+
+                        <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
+                        <label for="wheelchair">Rullstol</label>
+
+                        <input type="checkbox" id="walker" name="walker" value="yes">
+                        <label for="walker">Rollator</label>
+
+                        <input type="checkbox" id="assistant" name="assistant" value="yes">
+                        <label for="assistant">Ledsagare</label>
+
+                        <input type="checkbox" id="other-aid" name="other-aid" value="yes">
+                        <label for="other-aid">Annat hjälpmedel</label>
+
+                        <label for="other-aid-message">Beskriv hjälpmedel</label>
+                        <textarea id="other-aid-message" name="other-aid-message"
+                            placeholder="Beskriv hjälpmedel"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Önskemål eller behov</legend>
+                        <span>Valfritt</span>
+
+                        <label for="number-companion">Antal medresenärer</label>
+                        <input type="number" id="number-companion" name="number-companion" value="0" min="0">
+
+
+                        <input type="checkbox" name="pet" id="pet" value="yes">
+                        <label for="pet">Ta med husdjur</label>
+
+                        <input type="checkbox" name="baggage" id="baggage" value="yes">
+                        <label for="baggage">Extra bagage (totalvikt över 20 kg)</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Återkommande resor</legend>
+                        <span>Valfritt</span>
+                        <p>Om din resa återkommer vid samma tid och dag under en period kan du fylla i detta här -
+                            annars kan du lämna fältet tomt.</p>
+
+                        <label for="recurring"> Typ av återkommande resa</label>
+                        <select name="recurring" id="recurring">
+                            <option value="">Val av återkommande resa</option>
+                            <option value="daily">Varje dag</option>
+                            <option value="weekdays">Vardagar (måndag - fredag)</option>
+                            <option value="weekends">Helger (lördag - söndag)</option>
+                            <option value="weekly">Samma dag och tid varje vecka</option>
+                            <option value="monthly">Samma dag och tid varje månad</option>
+                        </select>
+                    </fieldset>
+                    <input type="submit" name="book-trip" id="book-trip" value="Boka resa">
+                </form>
+
+
+
+            </section>
+
+
+        </main>
+        <footer>
+            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+                    <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,32 @@
 @use '../variables';
+@use '../base';
+
+.skip-link-wrapper {
+    position: relative;
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: black;
+    color: variables.$text-color-light;
+    font-size: 1.1rem;
+    border-radius: 0 0 4px 0;
+    padding: 8px 16px;
+    z-index: 1000;
+    transition: top 0.3s;
+
+
+    &:focus {
+        top: 0;
+    }
+}
+
+.mobile-menu-button {
+    display: none;
+}
+
 
 nav {
     ul {
@@ -28,6 +56,44 @@ nav {
 
 }
 
+/****************************************/
+/************ Page header***************/
+/**************************************/
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.3rem;
+    background-color: variables.$background-color;
+}
+
+.breadcrumbs {
+
+    ol {
+        list-style: none;
+        display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            a {
+                font-weight: 500;
+            }
+
+            .slash {
+            margin-inline: 2px;
+            }
+
+    }
+}
+
+
+
+
+
+
+
+
 
 /****************************************/
 /************Hambugermeny***************/
@@ -36,6 +102,7 @@ nav {
     .container .menu {
         height: 100%;
     }
+
     .menu {
         display: none;
     }

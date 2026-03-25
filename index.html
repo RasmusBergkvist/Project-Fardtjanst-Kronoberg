@@ -2,9 +2,9 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -14,10 +14,17 @@
 </head>
 
 <body>
-  <!-- Hoppa till huvudinnehållet -->
-  <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+
+
   <div class="container">
+
+    <div class="skip-link-wrapper">
+      <!-- Hoppa till sidans innehåll -->
+      <a href="#main-content" class="skip-link">Hoppa till sidans innehåll</a>
+    </div>
+
     <header>
+
       <div class="header-container">
         <h1><a href="/">Färdtjänst Kronoberg</a></h1>
         <nav class="menu" id="menu">
@@ -29,7 +36,7 @@
             <li><a href="/minasidor" class="nav-link">Mina sidor</a></li>
           </ul>
         </nav>
-        <!-- Mobilmeny (Hambugermeny) --->
+        <!-- Mobilmeny (Hambugermeny) -->
         <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
           &#9776;
         </button>
@@ -49,7 +56,7 @@
       <section class="index-booking">
         <h2>Mina bokade resor</h2>
         <div class="trips">
-          <article id="trip-item" class="trip-item">
+          <article id="trip-item-1" class="trip-item">
             <h3>Biljett: #1115</h3>
             <br>
             <p><strong>Från: </strong> Älmhult</p>
@@ -60,7 +67,7 @@
             <br>
             <a href="/mina-bokade-resor#"><img src="./icons/link.svg" alt="ikon av en kedjelänk">Bokningsinformation</a>
           </article>
-          <article id="trip-item" class="trip-item">
+          <article id="trip-item-2" class="trip-item">
             <h3>Biljett: #1102</h3>
             <br>
             <p><strong>Från: </strong> Älmhult</p>
@@ -107,4 +114,5 @@
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

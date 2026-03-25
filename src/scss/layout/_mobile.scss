@@ -1,0 +1,25 @@
+@media screen and (max-width: 768px) {
+
+
+
+    .index-boking,
+    .trips,
+    .index-help,
+    .faq-contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+    }
+
+    .trip-item,
+    .faq-box,
+    .contact-box {
+        width: 100%;
+
+
+    }
+
+    
+
+}
