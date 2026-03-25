@@ -21,6 +21,8 @@
     &:focus {
         top: 0;
     }
+
+
 }
 
 .mobile-menu-button {
@@ -34,6 +36,8 @@ nav {
             display: inline;
             padding-inline: 1.5rem;
 
+        
+
         }
     }
 }
@@ -42,10 +46,17 @@ nav {
 .footer-link {
     color: variables.$text-color-light;
     text-decoration: none;
+    font-size: 1.1rem;
 
     &:hover {
         text-decoration: underline;
     }
+
+    &.current-page {
+        text-decoration: underline;
+    }
+
+  
 
 }
 
