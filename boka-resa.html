@@ -61,11 +61,18 @@
 
                     <fieldset>
                         <legend>Hur vill du resa?</legend>
-                        <input type="radio" id="trip-oneway" name="trip" required checked>
-                        <label for="trip-oneway">Enkel resa</label>
+                        
+                        <div class="radio-style">
+                            <label for="trip-oneway">
+                                <input type="radio" id="trip-oneway" name="trip" required checked>
+                                <span>Enkel resa</span>
+                            </label>
 
-                        <input type="radio" id="trip-return" name="trip" required>
-                        <label for="trip-return">Tur och retur</label>
+                            <label for="trip-return">
+                                <input type="radio" id="trip-return" name="trip" required>
+                                <span>Tur och retur</span>
+                            </label>
+                        </div>
 
                         <label for="from-address">Åka från (adress och ort)</label>
                         <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" required>
@@ -85,45 +92,54 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend>Hjälpmedel</legend>
-                        <span>Valfritt</span>
+                        <legend>Hjälpmedel (valfritt)</legend>
                         <p>Välj alternativ om du behöver något hjälpmedel eller stöd på din resa</p>
 
-                        <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
-                        <label for="wheelchair">Rullstol</label>
+                        <label for="wheelchair">
+                            <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
+                            <span>Rullstol</span>
+                        </label>
 
-                        <input type="checkbox" id="walker" name="walker" value="yes">
-                        <label for="walker">Rollator</label>
+                        <label for="walker">
+                            <input type="checkbox" id="walker" name="walker" value="yes">
+                            <span>Rollator</span>
+                        </label>
 
-                        <input type="checkbox" id="assistant" name="assistant" value="yes">
-                        <label for="assistant">Ledsagare</label>
+                        <label for="assistant" class="label-checkbox">
+                            <input type="checkbox" id="assistant" name="assistant" value="yes">
+                            <span>Ledsagare</span>
+                        </label>
 
-                        <input type="checkbox" id="other-aid" name="other-aid" value="yes">
-                        <label for="other-aid">Annat hjälpmedel</label>
 
-                        <label for="other-aid-message">Beskriv hjälpmedel</label>
+                        <label for="other-aid-message">Annat hjälpmedel</label>
                         <textarea id="other-aid-message" name="other-aid-message"
                             placeholder="Beskriv hjälpmedel"></textarea>
                     </fieldset>
 
                     <fieldset>
-                        <legend>Önskemål eller behov</legend>
-                        <span>Valfritt</span>
-
-                        <label for="number-companion">Antal medresenärer</label>
-                        <input type="number" id="number-companion" name="number-companion" value="0" min="0">
+                        <legend>Önskemål eller behov (valfritt)</legend>
 
 
-                        <input type="checkbox" name="pet" id="pet" value="yes">
-                        <label for="pet">Ta med husdjur</label>
+                        <label for="number-companion">
+                            Antal medresenärer
+                            <input type="number" id="number-companion" name="number-companion" value="0" min="0">
+                        </label>
 
-                        <input type="checkbox" name="baggage" id="baggage" value="yes">
-                        <label for="baggage">Extra bagage (totalvikt över 20 kg)</label>
+
+                        <label for="pet">
+                            <input type="checkbox" name="pet" id="pet" value="yes">
+                            <span>Ta med husdjur</span>
+                        </label>
+
+                        <label for="baggage">
+                            <input type="checkbox" name="baggage" id="baggage" value="yes">
+                            <span>Extra bagage (totalvikt över 20 kg)</span>
+                        </label>
+
                     </fieldset>
 
                     <fieldset>
-                        <legend>Återkommande resor</legend>
-                        <span>Valfritt</span>
+                        <legend>Återkommande resor (valfritt)</legend>
                         <p>Om din resa återkommer vid samma tid och dag under en period kan du fylla i detta här -
                             annars kan du lämna fältet tomt.</p>
 
