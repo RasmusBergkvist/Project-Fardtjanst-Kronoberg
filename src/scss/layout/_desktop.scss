@@ -1,13 +1,7 @@
 @use '../variables';
 
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
 
-}
 
 /*****************************************/
 /************* Startsida *****************/
@@ -59,7 +53,7 @@
         display: flex;
         flex-direction: column;
         min-height: 270px;
-        min-width: 400px;
+        min-width: 350px;
         border: 1.15px solid variables.$primary-color;
         border-radius: 10px;
         background-color: white;
@@ -110,7 +104,7 @@ img {
         display: flex;
         flex-direction: column;
         min-height: 210px;
-        max-width: 400px;
+        max-width: 350px;
         background-color: variables.$box-color;
         border: 1.15px solid variables.$primary-color;
         border-radius: 10px;
@@ -180,6 +174,7 @@ footer {
 .book {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 700px;
     margin: 0 auto;
     gap: 1.5rem;
@@ -194,7 +189,8 @@ footer {
 form {
     display: block;
     margin: 0 auto;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
 
 
 
@@ -236,10 +232,10 @@ form {
     .radio-style {
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 60%;
-        margin-bottom: 0.8rem;
+        white-space: nowrap;
+        width: auto;
         gap: 1rem;
+        margin-bottom: 0.8rem;
     }
 
     input[type="radio"] {
@@ -257,8 +253,7 @@ form {
 
 
     textarea {
-        width: 100%;
-        max-width: 480px;
+        width: 80%;
         max-height: 300px;
         padding: 0.5rem;
         border-radius: 10px;

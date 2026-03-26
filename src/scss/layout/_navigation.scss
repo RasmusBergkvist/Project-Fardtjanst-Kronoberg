@@ -74,7 +74,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-top: 0.3rem;
     padding-inline: 2rem;
     background-color: variables.$background-color;
