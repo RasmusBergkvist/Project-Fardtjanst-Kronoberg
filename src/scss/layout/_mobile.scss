@@ -31,24 +31,41 @@
         width: 350px;
     }
 
-    .book, .page-faq {
-        padding-inline: 1rem;;
+    .book,
+    .page-faq,
+    .my-page {
+        padding-inline: 1rem;
+        ;
     }
 
     .page-header {
-    width: auto;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    padding-inline: 0.5rem;
+        width: auto;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        padding-inline: 0.5rem;
     }
 
-    h1 {
+    h1,
+    h2 {
         font-size: 1.5rem;
     }
 
     .page-a11y,
-    .content-contact{
+    .content-contact,
+    .confirmation {
         padding-inline: 0.6rem;
+    }
+
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+
+    .contact-img {
+        border-radius: 0 !important;
     }
 
 }
