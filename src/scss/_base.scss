@@ -56,3 +56,13 @@ p {
     font-weight: 700;
 }
 
+.text-link {
+    text-decoration: underline;
+    color: variables.$primary-color;
+
+    &:hover {
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+

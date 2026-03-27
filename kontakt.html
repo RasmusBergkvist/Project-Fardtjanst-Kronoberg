@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Färdtjänst Kronoberg</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="skip-link-wrapper">
+            <!-- Hoppa till sidans innehåll -->
+            <a href="#main-content" class="skip-link">Hoppa till sidans innehåll</a>
+        </div>
+
+        <header>
+
+            <div class="header-container">
+                <h1><a href="/">Färdtjänst Kronoberg</a></h1>
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
+                        <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
+                        <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
+                        <li><a href="/kontakt" class="nav-link current-page" aria-current="page">Kontakta oss</a></li>
+                        <li><a href="/minasidor" class="nav-link">Mina sidor</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobilmeny (Hambugermeny) -->
+                <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li><a href="/">Startsida</a><span class="slash">/</span></li>
+                    <li class="current-page" aria-current="page">Tillgänglighetsredogörelse</li>
+                </ol>
+            </nav>
+            <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
+                ut</a>
+        </div>
+        <main id="main-content">
+
+            <section class="page-contact">
+                <h2>Kontakta oss</h2>
+
+                <img src="./images/calling.webp" alt="En kvinna som håller i en mobiltelefon" width="1280" height="853">
+                <p class="ingress">Har du frågor om färdtjänst, dina bokade resor, fakturor, avbokningar eller
+                    ombokningar är du varmt välkommen att kontakta oss.
+                </p>
+
+                <p><strong>Telefon:</strong> 0476-15151515</p>
+                <p><strong>E-post:</strong>info@fardtjanstkronoberg.se</p>
+
+                <p>Vi svarar på e-post inom 1-2 arbetsdagar.</p>
+
+                <p><strong>Öppettider:</strong>Måndag - fredag klockan 08:00–17:00</p>
+
+                <p>Du kan också hitta mer information och svar under <a href="/vanliga-fragor" class="text-link">Vanliga frågor</a>.</p>
+            </section>
+
+
+        </main>
+        <footer>
+            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+                    <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
