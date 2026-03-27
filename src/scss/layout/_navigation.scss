@@ -36,7 +36,7 @@ nav {
             display: inline;
             padding-inline: 1.5rem;
 
-        
+
 
         }
     }
@@ -56,7 +56,7 @@ nav {
         text-decoration: underline;
     }
 
-  
+
 
 }
 
@@ -82,19 +82,22 @@ nav {
 
 .breadcrumbs {
 
+
     ol {
         list-style: none;
         display: flex;
-            align-items: center;
-            gap: 0.4rem;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        gap: 0.4rem;
 
-            a {
-                font-weight: 500;
-            }
+        a {
+            font-weight: 500;
+        }
 
-            .slash {
+        .slash {
             margin-inline: 1px;
-            }
+        }
 
     }
 }

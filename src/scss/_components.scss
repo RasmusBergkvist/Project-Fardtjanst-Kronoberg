@@ -1,6 +1,6 @@
 @use './variables';
 
-@mixin book-button {
+@mixin green-button {
     background-color: variables.$button-color-book;
     color: variables.$text-color-light;
     font-size: variables.$text-size;
@@ -35,7 +35,7 @@
     text-shadow: 1px 1px 2px black;
 
     a {
-        @include book-button;
+        @include green-button;
     }
 }
 
@@ -43,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    flex-shrink: 0;
     gap: 0.4rem;
     margin-right: 0.5rem;
     margin-top: 0.2rem;
@@ -74,9 +75,13 @@
 }
 
 .send-booking {
-    @include book-button;
+    @include green-button;
     display: flex;
     margin: 2rem auto
+}
+
+.send-a11y-form {
+    @include green-button;
 }
 
 .material-symbols-outlined {
