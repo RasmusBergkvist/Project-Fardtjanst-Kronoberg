@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Färdtjänst Kronoberg</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="skip-link-wrapper">
+            <!-- Hoppa till sidans innehåll -->
+            <a href="#main-content" class="skip-link">Hoppa till sidans innehåll</a>
+        </div>
+
+        <header>
+
+            <div class="header-container">
+                <h1><a href="/">Färdtjänst Kronoberg</a></h1>
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
+                        <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
+                        <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
+                        <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
+                        <li><a href="/minasidor" class="nav-link">Mina sidor</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobilmeny (Hambugermeny) -->
+                <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li><a href="/">Startsida</a><span class="slash">/</span></li>
+                    <li class="current-page" aria-current="page">Tillgänglighetsredogörelse</li>
+                </ol>
+            </nav>
+            <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
+                ut</a>
+        </div>
+        <main id="main-content">
+
+            <section class="page-a11y">
+                <h2>Tillgänglighetsredogörelse</h2>
+                <p>Färdtjänst Kronoberg står bakom den här webbplatsen. Vi vill att så många som möjligt ska kunna
+                    använda den. Här beskrivs hur webbplatsen Färdtjänst Kronoberg uppfyller lagen om tillgänglighet
+                    till digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera
+                    brister till oss så att vi kan åtgärda dem.</p>
+
+                <div class="content-a11y">
+                    <h3>Hur tillgänglig är webbplatsen??</h3>
+                    <p>Vi är medvetna om att delar av webbplatsen inte är helt tillgängliga. Se avsnittet om innehåll
+                        som inte är tillgängligt nedan för mer information.</p>
+
+                    <h3>Vad kan du göra om du inte kan använda delar av webbplatsen</h3>
+                    <p>Om innehåll från webbplatsen inte är tillgängligt för dig, kan du meddela oss genom att fylla i
+                        formuläret nedan.</p>
+                    <p>
+                        Svarstiden är normalt 1- 2 arbetsdagar.
+                    </p>
+                    <p>
+                        Du kan också kontakta oss genom att:
+                    </p>
+                    <ul>
+                        <li>Skicka e-post till info@fardtjanstkronoberg.se</li>
+                        <li>Ringa oss på 0476-15 15 15 15</li>
+                    </ul>
+
+
+                    <h3>Rapportera brister i webbplatsens tillgänglighet</h3>
+                    <p>Vi strävar hela tiden efter att förbättra webbplatsens tillgänglighet. Om du upptäcker problem
+                        som inte är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav,
+                        meddela oss så att vi får veta att problemet finns.</p>
+
+                    <form class="from-a11y">
+                        <fieldset>
+                            <label for="fullname">För- och efternamn:</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Ex. Kalle Svesson" required>
+
+                            <label for="phone">Telefonnummmer (070 - 123 45 67)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ex. 070 - 123 45 67">
+
+                            <label for="epost">E-post:</label>
+                            <input type="email" id="epost" name="epost" placeholder="Din e-postadress">
+
+                            <label for="url"> Vilken sida gäller det (länkadress) </label>
+                            <input type="text" id="url" name="url" placeholder="Ex. fardtjanstkronoberg.se/boka-resa"
+                                required>
+
+                            <label for="message">Meddelande:</label>
+                            <textarea id="message" name="message"
+                                placeholder="Här skriver du vad som inte är tillgängligt på webbplasten."
+                                required></textarea>
+
+                                <button type="submit" class="send-a11y-form" name="a11yButton" value="skicka"
+                                aria-label="Skicka">Skicka</button>
+                        </fieldset>
+        
+                    </form>
+
+                    <h3>Tillsyn</h3>
+                    <p>Myndigheten för digital förvaltning, Digg, har ansvaret för tillsyn över lagen om tillgänglighet
+                        till digital offentlig service. Du kan anmäla till Digg om du tycker att vår digitala service
+                        har brister i tillgänglighet.</p>
+
+                    <p>Du kan också anmäla till Digg om du tycker att vår bedömning av vad som är oskäligt betungande
+                        ska
+                        granskas, om du tycker att vår tillgänglighetsredogörelse har brister eller om du tycker att vi
+                        inte har hanterat din begäran om tillgängliggörande korrekt.</p>
+
+                    <h3>Teknisk information om webbplatsens tillgänglighet</h3>
+                    <p>Den här webbplatsen är delvis förenlig med lagen om tillgänglighet till digital offentlig
+                        service, på grund av de brister som beskrivs nedan.</p>
+
+                    <h3>Innehåll som inte är tillgängligt</h3>
+
+                    <p>Det innehåll som beskrivs nedan är på ett eller annat sätt inte helt tillgängligt.</p>
+
+                    <h4>Bristande förenlighet med lagkraven</h4>
+
+                    <ul>
+                        <li>Vissa nedladdningsbara PDF- och Word-dokument är inte tillgänglighetsanpassade.</li>
+                        <li>Videor saknar textning och syntolkning.</li>
+                    </ul>
+                    <p>Vår ambition är att ha åtgärdat alla kända tillgänglighetsproblem senast den 31 december 2026.
+                    </p>
+
+                    <h3>Hur vi testat webbplatsen</h3>
+                    <p>Vi har gjort en självskattning (intern testning) av Färdtjänst Kronoberg.
+                    </p>
+                    <p>Senaste bedömningen gjordes den 6 mars 2026.</p>
+                    <p>Webbplatsen publicerades den 1 januari 2024</p>
+                </div>
+
+            </section>
+
+
+        </main>
+        <footer>
+            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+                    <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
