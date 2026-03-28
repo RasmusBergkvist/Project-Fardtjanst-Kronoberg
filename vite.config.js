@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         boka: resolve(__dirname, "boka-resa.html"),
-        bokadresa: resolve(__dirname, "boka-resa.html"),
+        bokadresa: resolve(__dirname, "bokad-resa.html"),
         minabokningar: resolve(__dirname, "mina-bokningar.html"),
         faq: resolve(__dirname, "vanliga-fragor.html"),
         kontakt: resolve(__dirname, "kontakta-oss.html"),

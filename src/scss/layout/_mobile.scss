@@ -35,7 +35,7 @@
     .page-faq,
     .my-page {
         padding-inline: 1rem;
-        ;
+    
     }
 
     .page-header {
@@ -52,8 +52,12 @@
 
     .page-a11y,
     .content-contact,
-    .confirmation {
+    .confirmation,
+    .sign-out {
         padding-inline: 0.6rem;
+
+        
+
     }
 
     fieldset {
@@ -62,7 +66,6 @@
         padding: 1rem;
         margin-bottom: 1.5rem;
     }
-
 
     .contact-img {
         border-radius: 0 !important;
