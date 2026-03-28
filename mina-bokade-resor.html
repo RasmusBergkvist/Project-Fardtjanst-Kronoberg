@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Färdtjänst Kronoberg</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="skip-link-wrapper">
+            <!-- Hoppa till sidans innehåll -->
+            <a href="#main-content" class="skip-link">Hoppa till sidans innehåll</a>
+        </div>
+
+        <header>
+
+            <div class="header-container">
+                <h1><a href="/">Färdtjänst Kronoberg</a></h1>
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
+                        <li><a href="/mina-bokade-resor" class="nav-link current-page" aria-current="page">Mina bokade
+                                resor</a></li>
+                        <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
+                        <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
+                        <li><a href="/mina-sidor" class="nav-link">Mina sidor</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobilmeny (Hambugermeny) -->
+                <button id="mobile-menu" class="mobile-menu-button" aria-label="Öppna webbplastens navigationsmeny">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <ol>
+                    <li><a href="/">Startsida</a><span class="slash">/</span></li>
+                    <li class="current-page" aria-current="page">Mina bokade resor</li>
+                </ol>
+            </nav>
+            <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
+                ut</a>
+        </div>
+        <main id="main-content">
+
+            <section class="my-bookings">
+                <h2>Mina bokade resor</h2>
+                <p>Här ser du resedetaljerna på dina bokade färdtjänstresor.</p>
+
+                <div id="trips">
+                    <article>
+                        <h3>Biljettt: #1115</h3>
+                        <span>Typ av resa:</span>
+                        <div class="trip-type">
+                            <span class="material-symbols-outlined">sync_alt</span>
+                            <p>Tur och retur</p>
+                        </div>
+                        <span>Från:</span>
+                        <p>Ljungbyvägen 11, Älmhult</p>
+                        <span>Till:</span>
+                        <p> Allbogatan 5, Liatorp</p>
+                        <span>Avresa:</span>
+                        <p>4 mars klockan 18.00</p>
+                        <span>Återresa:</span>
+                        <p>4 mars klockan 21.00</p>
+                        <span>Hjälpmedel : </span>
+                        <p>Rullstol</p>
+                        <span>Önskemål eller behov:</span>
+                        <p>Medresenär: 1</p>
+                        <button>Omresa resa </button>
+                        <button>Avboka resa </button>
+
+                    </article>
+
+                    <article>
+                        <h3>Biljettt: #1115</h3>
+                        <span>Typ av resa:</span>
+                        <div class="trip-type">
+                            <span class="material-symbols-outlined">trending_flat</span>
+                            <p>Enkel resa</p>
+                        </div>
+                        <span>Från:</span>
+                        <p>Ljungbyvägen 11, Älmhult</p>
+                        <span>Till:</span>
+                        <p> Storgatan 9, Ljungby </p>
+                        <span>Avresa:</span>
+                        <p>4 mars klockan 18.00</p>
+                        <span>Hjälpmedel : </span>
+                        <p>Rullstol</p>
+                        <button>Omresa resa </button>
+                        <button>Avboka resa </button>
+
+                    </article>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+        <footer>
+            <h3><a href="/">Färdtjänst Kronoberg</a></h3>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="/kontakt" class="footer-link">Kontakta oss</a></li>
+                    <li><a href="/tillganglighetsredogorelse" class="footer-link">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
