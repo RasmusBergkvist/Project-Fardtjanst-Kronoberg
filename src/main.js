@@ -40,3 +40,18 @@ radioButtons.forEach(radioButton => {
         }
     });
 });
+
+
+/* Knapp avboka resa */
+const cancelButtons = document.querySelectorAll('.cancel-booking');
+
+cancelButtons.forEach(cancelButton => {
+    cancelButton.addEventListener('click', (event) => {
+        if (!confirm('Är du säker på att du vill avboka resan?')) {
+            event.preventDefault();
+
+        } else {
+            window.location.href = '/avbokad-resa';
+        }
+    });
+});

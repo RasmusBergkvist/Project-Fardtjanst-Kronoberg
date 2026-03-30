@@ -8,7 +8,7 @@
     border: none;
     border-radius: 15px;
     text-decoration: none;
-    margin-top: 1rem;
+    text-shadow: none;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -30,6 +30,7 @@
     align-items: center;
     white-space: nowrap;
     gap: 0.5rem;
+    cursor: pointer;
 
     &:hover {
         background-color: #504e4e;
@@ -50,6 +51,7 @@
     align-items: center;
     white-space: nowrap;
     gap: 0.5rem;
+    cursor: pointer;
 
     &:hover {
         background-color: #a70c0c;
@@ -116,7 +118,7 @@
 
 }
 
-.send-booking {
+.booking {
     @include green-button;
     display: flex;
     margin: 2rem auto;
@@ -133,6 +135,7 @@
 
 .send-a11y-form {
     @include green-button;
+    margin-top: 1rem;
 }
 
 .material-symbols-outlined {

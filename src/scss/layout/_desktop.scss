@@ -120,22 +120,6 @@ img {
             margin-bottom: 0.5rem;
         }
 
-        a {
-            display: flex;
-            margin: 0 auto;
-            margin-top: auto;
-            background-color: variables.$button-color-book;
-            color: variables.$text-color-light;
-            padding: 0.5rem 1.2rem;
-            border-radius: 15px;
-
-            &:hover {
-                background-color: variables.$primary-color;
-            }
-
-        }
-
-
     }
 
 
@@ -519,10 +503,13 @@ form {
 /****************************************************/
 
 .confirmation {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    height: 65vh;
+    height: 80vh;
+    gap: 10px;
 
 
     h2 {
@@ -533,10 +520,15 @@ form {
     }
 
 
-    .ingress,
-    p {
-        margin-bottom: 1rem;
+
+
+
+    .new-booking {
+        display: inline-flex;
+        align-self: start;
     }
+
+    
 
 
 

@@ -11,20 +11,24 @@ body {
     font-family: variables.$font-stack;
     line-height: 1.6;
     list-style: none;
-    
-
-
-
 
 }
 
 html,
 body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     max-width: 1440px;
     margin: auto;
-    overflow-x: hidden;
 }
+
+
 
 
 main {
@@ -48,7 +52,14 @@ p {
     max-width: 60ch;
 }
 
-.ingress, span {
+.ingress {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+span {
     font-weight: 600;
 }
 
@@ -65,4 +76,3 @@ p {
         text-decoration: none;
     }
 }
-

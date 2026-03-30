@@ -14,7 +14,6 @@ export default defineConfig({
         minasidor: resolve(__dirname, "mina-sidor.html"),
         omboka: resolve(__dirname, "omboka-resa.html"),
         ombokadresa: resolve(__dirname, "ombokad-resa.html"),
-        avboka: resolve(__dirname, "avboka-resa.html"),
         avbokadresa: resolve(__dirname, "avbokad-resa.html"),
         tillganglighetsredogorelse: resolve(__dirname, "tillganglighetsredogorelse.html"),
         synpunkter: resolve(__dirname, "synpunkter-tillgangliget.html"),
