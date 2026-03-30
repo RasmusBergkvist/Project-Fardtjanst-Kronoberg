@@ -32,10 +32,11 @@
     }
 
     .book,
+    .my-bookings,
     .page-faq,
     .my-page {
         padding-inline: 1rem;
-    
+
     }
 
     .page-header {
@@ -56,7 +57,7 @@
     .sign-out {
         padding-inline: 0.6rem;
 
-        
+
 
     }
 
@@ -70,5 +71,17 @@
     .contact-img {
         border-radius: 0 !important;
     }
+
+    .booking-details {
+        padding-inline: 1.2rem !important;
+    }
+
+    .buttons-change-cancel {
+        display: flex;
+        justify-content: center;
+        gap: 20px !important;
+
+    }
+
 
 }
