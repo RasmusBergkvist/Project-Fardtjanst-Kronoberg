@@ -31,7 +31,7 @@
                 <nav class="menu" id="menu">
                     <ul>
                         <li><a href="/boka-resa" class="nav-link current-page" aria-current="page">Boka resa</a></li>
-                        <li><a href="/mina-bokade-resor" class="nav-link" >Mina bokade resor</a></li>
+                        <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
                         <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
                         <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
                         <li><a href="/mina-sidor" class="nav-link">Mina sidor</a></li>
@@ -58,58 +58,63 @@
             <section class="book">
                 <h2>Boka resa</h2>
 
-                <form action="/bokad-resa.html">
+                <form id="booking-form" action="/bokad-resa.html">
 
                     <fieldset>
                         <legend>Hur vill du resa?</legend>
 
                         <div class="radio-style">
                             <label for="trip-oneway">
-                                <input type="radio" id="trip-oneway" name="trip" value="oneway" required checked>
+                                <input type="radio" id="trip-oneway" name="trip" value="oneway" checked>
                                 <span class="material-symbols-outlined">trending_flat</span>
                                 <span>Enkel resa</span>
                             </label>
 
                             <label for="trip-return">
-                                <input type="radio" id="trip-return" name="trip" value="return" required>
+                                <input type="radio" id="trip-return" name="trip" value="return">
                                 <span class="material-symbols-outlined">sync_alt</span>
                                 <span>Tur och retur</span>
                             </label>
                         </div>
 
                         <div class="trip-details">
+                            
                             <label for="from-address">
+                                
                                 <span class="material-symbols-outlined">home_pin</span>
                                 <span>Åka från (adress och ort)</span>
-                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö"
-                                    required>
+                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö">
                             </label>
+                            <span id="from-error" class="error" role="alert"></span>
+                            
 
 
                             <label for="to-address">
                                 <span class="material-symbols-outlined">location_on</span>
                                 <span>Resa till (adress och ort)</span>
-                                <input type="text" id="to-address" name="to-address"
-                                    placeholder="Ex. Smultronvägen 55, Älmhult" required>
+                                <input type="text" id="to-address" name="to"
+                                    placeholder="Ex. Smultronvägen 55, Älmhult">
                             </label>
-
-
+                            <span id="to-error" class="error"></span>
 
 
                             <label for="departure-time">
                                 <span class="material-symbols-outlined">calendar_month</span>
                                 <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="departure-time" name="departure-time">
+                                <input type="datetime-local" id="departure-time" name="departure">
                             </label>
+                            <span id="departure-error" class="error"></span>
                         </div>
+
 
 
                         <div id="returning-trip" class="hidden">
                             <label for="return-time">
                                 <span class="material-symbols-outlined">calendar_month</span>
                                 <span>Välj datum och tid för återresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="return-time" name="return-time">
+                                <input type="datetime-local" id="return-time" name="returning">
                             </label>
+                            <span id="returning-error" class="error"></span>
 
                         </div>
                     </fieldset>
@@ -135,7 +140,7 @@
 
 
                         <label for="other-aid-message">Annat hjälpmedel</label>
-                        <textarea id="other-aid-message" name="other-aid-message" placeholder="Beskriv hjälpmedel"
+                        <textarea id="other-aid-message" name="otherAidMessage" placeholder="Beskriv hjälpmedel"
                             rows="5"></textarea>
                     </fieldset>
 
@@ -145,7 +150,7 @@
 
                         <label for="number-companion">
                             Antal medresenärer
-                            <input type="number" id="number-companion" name="number-companion" value="0" min="0">
+                            <input type="number" id="number-companion" name="companion" value="0" min="0">
                         </label>
 
 
@@ -176,8 +181,7 @@
                             <option value="monthly">Samma dag och tid varje månad</option>
                         </select>
                     </fieldset>
-                    <button type="submit" class="booking" name="bookButton" value="Boka resa"
-                        aria-label="Boka resa">
+                    <button type="submit" class="booking" name="bookButton" value="Boka resa" aria-label="Boka resa">
                         <img src="./icons/ticket.svg" alt=""> Boka resa
                     </button>
                 </form>

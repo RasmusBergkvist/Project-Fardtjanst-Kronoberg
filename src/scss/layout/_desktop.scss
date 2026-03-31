@@ -120,6 +120,21 @@ img {
             margin-bottom: 0.5rem;
         }
 
+        a {
+            display: flex;
+            margin: 0 auto;
+            margin-top: auto;
+            background-color: variables.$button-color-book;
+            color: variables.$text-color-light;
+            padding: 0.5rem 1.2rem;
+            border-radius: 15px;
+
+            &:hover {
+                background-color: variables.$primary-color;
+            }
+
+        }
+
     }
 
 
@@ -509,7 +524,7 @@ form {
     width: 100%;
     margin: 0 auto;
     height: 80vh;
-    gap: 10px;
+    gap: 15px;
 
 
     h2 {
@@ -526,9 +541,10 @@ form {
     .new-booking {
         display: inline-flex;
         align-self: start;
+        margin: 0;
     }
 
-    
+
 
 
 

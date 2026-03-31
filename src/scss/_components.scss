@@ -121,7 +121,7 @@
 .booking {
     @include green-button;
     display: flex;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .change-booking {
@@ -138,8 +138,14 @@
     margin-top: 1rem;
 }
 
+
 .material-symbols-outlined {
   font-size: 20px; 
   font-weight: 500;
   vertical-align: middle;
+}
+
+.error {
+    color: #e82020;
+    font-weight: 700;
 }
