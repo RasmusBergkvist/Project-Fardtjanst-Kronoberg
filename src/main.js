@@ -23,9 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     });
+    //Hämtar innehållet för alla bokningar i diven med id trips
+    const cancelTrip = document.querySelector('#trips');
+    //Om det inte finns något i trips görs ingenting.
+    if (!cancelTrip) {
+        return
+    }
+    //Lyssnar på klick i diven
+    cancelTrip.addEventListener('click', (event) => {
+
+        //Kontroll att klickat element har klassen cancel-booking
+        if (event.target.classList.contains('cancel-booking')) {
+
+
+            //Hämtar ticketId från knappen för resan
+            const ticketId = event.target.getAttribute('data-id');
+
+            cancelBooking(ticketId);
+
+        }
+    });
 
 
 });
+
 
 /** Toogla vid returresa */
 const radioButtons = document.querySelectorAll('input[name="trip"]');
@@ -42,19 +63,6 @@ radioButtons.forEach(radioButton => {
 });
 
 
-/* Knapp avboka resa */
-const cancelButtons = document.querySelectorAll('.cancel-booking');
-
-cancelButtons.forEach(cancelButton => {
-    cancelButton.addEventListener('click', (event) => {
-        if (!confirm('Är du säker på att du vill avboka resan?')) {
-            event.preventDefault();
-
-        } else {
-            window.location.href = '/avbokad-resa';
-        }
-    });
-});
 
 
 let bookings;
@@ -81,7 +89,7 @@ if (bookedTrips) {
         wheelchair: 'true'
     }
 
-];
+    ];
 }
 
 //Sotera bokningarna i fallande ordning
@@ -160,12 +168,13 @@ if (bookingForm) {
             }
         }
 
+        //Om fel finns, avbryt
         if (error) {
             return;
         }
 
 
-
+        //Skapar nytt objekt med värden från bokningen
         const newBooking = {
             ticketId: Date.now(),
             tripType: tripTypeInput,
@@ -184,6 +193,7 @@ if (bookingForm) {
 
         };
 
+        //Lägger till nya bokningen i bokningsarrayen.
         bookings.push(newBooking);
 
         //Spara till local storage
@@ -194,31 +204,57 @@ if (bookingForm) {
 
     });
 }
+/* Avboka resan */
+function cancelBooking(ticketId) {
+    //Om ticketId inte finns, avbryt funktionen
+    if (!ticketId) {
+        return
+    }
+
+    if (confirm('Är du säker på att du vill avboka resan?')) {
+        //Filtrear bort övriga ticketId
+        bookings = bookings.filter(trip => trip.ticketId != ticketId);
+
+        //Uppadaterar till Local storage
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+
+        // Skickar användaren till sidan avbokad-resa
+        window.location.href = '/avbokad-resa';
+
+    }
+
+}
 
 function printTicket() {
-    if ('trips') {
+    //Kontroll att diven trips finns
+    if (trips) {
 
+        //Rensar tidigare innehåll innan ny bokning läggs till
         trips.innerHTML = "";
 
         bookings.forEach((trip) => {
 
             let tripTypeText;
 
+            //Skriver ut enkel resa eller tur och retur med rätt ikon beroende på val.
             if (trip.tripType === "return") {
                 tripTypeText = '<span class="material-symbols-outlined">sync_alt</span> Tur och retur';
             } else {
                 tripTypeText = '<span class="material-symbols-outlined">trending_flat</span> Enkel resa';
             }
 
+            //Formatering av datum och tid
+
             let departureTime = formattedDateTime(trip.departure);
             let returningTime = formattedDateTime(trip.returning);
 
+            //Om återresa väljs skrivs skrivs formaterat tid och datum ut.
             let returnText = "";
 
             if (trip.returning) {
                 returnText = `<p><strong>Återresa:</strong> ${returningTime}</p>`;
             }
-
+            //Om hjälpmedel väljs skrivs respektive val ut.
             let helpContent = "";
             if (trip.wheelchair) {
                 helpContent += `<p>Rullstol</p>`;
@@ -241,6 +277,7 @@ function printTicket() {
                 helpHeading = `<h4>Hjälpmedel: </h4>`;
             }
 
+            //Om övriga önskemål eller behov väljs, skrivs respektive val ut
             let otherRequestContent = "";
             if (trip.companions > 0) {
                 otherRequestContent += `<p>Medresenär: ${trip.companions}</p>`;
@@ -259,6 +296,7 @@ function printTicket() {
                 otherRequestHeading = `<h4>Övriga behov eller önskemål: </h4>`;
             }
 
+            //Om återkommande resor väljs, skrivs valt alternativ ut
             let recurringTrips = "";
             if (trip.recurring === "daily") {
                 recurringTrips = `<p>Varje dag</p>`;
@@ -277,8 +315,7 @@ function printTicket() {
                 recurringTripsHeading = `<h4>Återkommande resor:</h4>`;
             }
 
-
-
+            //Skaper HTML-element och skriver ut till DOM
             const tripDetails = `
                 <article class="booking-details">
                     <h3>Biljett: #${trip.ticketId}</h3>
@@ -301,17 +338,27 @@ function printTicket() {
                     class="material-symbols-outlined">change_circle</span>Omboka resa</button>
 
                     <button class="cancel-booking" name="cancelButton" value="Avboka resa"
-                    aria-label="Avboka resa" aria-label="Boka resa"> <span
+                    aria-label="Avboka resa" aria-label="Boka resa" data-id="${trip.ticketId}"> <span
                     class="material-symbols-outlined">cancel</span>Avboka resa</button>
                 </article>`;
 
+            //Lägger till bokningen i trips.
             trips.innerHTML += tripDetails;
         });
+
+
+
+
     }
 
 }
 printTicket();
 
+
+
+
+
+//Funktion för att omvanlda datum och tid till rätt format.
 function formattedDateTime(dateTimeInput) {
     const dateAndTime = new Date(dateTimeInput);
 
