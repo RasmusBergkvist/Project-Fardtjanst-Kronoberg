@@ -30,7 +30,7 @@
                 <h1><a href="/">Färdtjänst Kronoberg</a></h1>
                 <nav class="menu" id="menu">
                     <ul>
-                        <li><a href="/boka-resa" class="nav-link current-page" aria-current="page">Boka resa</a></li>
+                        <li><a href="/boka-resa" class="nav-link">Boka resa</a></li>
                         <li><a href="/mina-bokade-resor" class="nav-link">Mina bokade resor</a></li>
                         <li><a href="/vanliga-fragor" class="nav-link">Vanliga frågor</a></li>
                         <li><a href="/kontakt" class="nav-link">Kontakta oss</a></li>
@@ -47,7 +47,7 @@
             <nav class="breadcrumbs" aria-label="breadcrumb">
                 <ol>
                     <li><a href="/">Startsida</a><span class="slash">/</span></li>
-                    <li class="current-page" aria-current="page">Boka resa</li>
+                    <li class="current-page" aria-current="page">Omboka resa</li>
                 </ol>
             </nav>
             <a href="/logout" class="logout"><img src="./icons/logout.svg" alt="En dörr med en pil som pekar ut">Logga
@@ -56,12 +56,12 @@
         <main id="main-content">
 
             <section class="book">
-                <h2>Boka resa</h2>
+                <h2>Omboka resa</h2>
 
                 <form id="booking-form">
 
                     <fieldset>
-                        <legend>Hur vill du resa?</legend>
+                        <legend>Vad vill du ändra?</legend>
 
                         <div class="radio-style">
                             <label for="trip-oneway">
@@ -181,12 +181,10 @@
                             <option value="monthly">Samma dag och tid varje månad</option>
                         </select>
                     </fieldset>
-                    <button class="booking" name="bookButton" value="Boka resa" aria-label="Boka resa">
-                        <img src="./icons/ticket.svg" alt=""> Boka resa
-                    </button>
+                <button class="change-booking-center" name="changeButton" value="Omboka resa"
+                    aria-label="Omboka resa" aria-label="Boka resa"> <span
+                    class="material-symbols-outlined">change_circle</span>Omboka resa</button>
                 </form>
-
-
 
             </section>
 

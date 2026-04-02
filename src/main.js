@@ -24,22 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
     //Hämtar innehållet för alla bokningar i diven med id trips
-    const cancelTrip = document.querySelector('#trips');
+    const allTrips = document.querySelector('#trips');
     //Om det inte finns något i trips görs ingenting.
-    if (!cancelTrip) {
+    if (!allTrips) {
         return
     }
+
     //Lyssnar på klick i diven
-    cancelTrip.addEventListener('click', (event) => {
+    allTrips.addEventListener('click', (event) => {
 
         //Kontroll att klickat element har klassen cancel-booking
         if (event.target.classList.contains('cancel-booking')) {
 
 
             //Hämtar ticketId från knappen för resan
-            const ticketId = event.target.getAttribute('data-id');
+            let ticketId = event.target.getAttribute('data-id');
 
             cancelBooking(ticketId);
+
+            //Kontroll att klickat element har klassen change-booking
+        } else if (event.target.classList.contains('change-booking')) {
+            //Hämtar ticketId från knappen för resan
+            let ticketId = event.target.getAttribute('data-id');
+
+            changeBooking(ticketId)
+
 
         }
     });
@@ -66,6 +75,7 @@ radioButtons.forEach(radioButton => {
 
 
 let bookings;
+//Hämtar bokningar från local storage
 const bookedTrips = localStorage.getItem('bookings');
 if (bookedTrips) {
     bookings = JSON.parse(bookedTrips)
@@ -75,8 +85,8 @@ if (bookedTrips) {
         tripType: 'return',
         from: 'Ljungbyvägen 11, Älmhult',
         to: 'Allbogatan 5, Liatorp',
-        departure: '2026-03-06T18:00',
-        returning: '2026-03-06T21:00',
+        departure: '2026-04-16T18:00',
+        returning: '2026-04-16T21:00',
         wheelchair: 'true',
         companions: 1
     },
@@ -85,7 +95,7 @@ if (bookedTrips) {
         tripType: 'oneway',
         from: 'Ljungbyvägen 11, Älmhult',
         to: 'Storgatan 9, Ljungby',
-        departure: '2026-03-04T08:00',
+        departure: '2026-04-13T08:00',
         wheelchair: 'true'
     }
 
@@ -95,7 +105,106 @@ if (bookedTrips) {
 //Sotera bokningarna i fallande ordning
 bookings.sort((a, b) => b.ticketId - a.ticketId);
 
+/*Omboka resa */
+function changeBooking(ticketId) {
+    //Sparar id för bokning som ska ändras
+    localStorage.setItem('rebookTrip', ticketId)
 
+    window.location.href = '/omboka-resa';
+}
+
+// Hämtar uppgifter som ska ändras
+const editId = localStorage.getItem('rebookTrip');
+
+//Letar upp matchade id som ska ändras 
+const editTrip = bookings.find(trip => trip.ticketId == editId);
+
+//Om resan finns hämtas uppgifer och ladda till sidan Omboka resa
+if (editTrip) {
+    const bookingForm = document.querySelector('#booking-form');
+
+    //Fyller i uppgifter i bokningsformuläret från ordinare bokning.
+    if (bookingForm) {
+        if (editTrip.tripType === 'return') {
+            bookingForm.trip[1].checked = true;
+            returningTrip.classList.remove('hidden');
+
+        } else {
+            bookingForm.trip[0].checked = true;
+            returningTrip.classList.add('hidden');
+        }
+
+        bookingForm.from.value = editTrip.from;
+        bookingForm.to.value = editTrip.to;
+        bookingForm.departure.value = editTrip.departure;
+
+        if (editTrip.returning) {
+            bookingForm.returning.value = editTrip.returning;
+        } else {
+            bookingForm.returning.value = "";
+        }
+
+        if (editTrip.wheelchair) {
+            bookingForm.wheelchair.checked = true;
+        } else {
+            bookingForm.wheelchair.checked = false;
+        }
+
+        if (editTrip.walker) {
+            bookingForm.walker.checked = true;
+        } else {
+            bookingForm.walker.checked = false;
+        }
+
+        if (editTrip.assistant) {
+            bookingForm.assistant.checked = true;
+        } else {
+            bookingForm.assistant.checked = false;
+        }
+
+        if (editTrip.otherAidMessage) {
+            bookingForm.otherAidMessage.value = editTrip.otherAidMessage;
+        } else {
+            bookingForm.otherAidMessage.value = "";
+        }
+
+        if (editTrip.companions) {
+            bookingForm.companions.value = editTrip.companions;
+        } else {
+            bookingForm.companions.value = "";
+        }
+
+        if (editTrip.pet) {
+            bookingForm.pet.checked = true;
+        } else {
+            bookingForm.pet.checked = false;
+        }
+
+        if (editTrip.baggage) {
+            bookingForm.baggage.checked = true;
+        } else {
+            bookingForm.baggage.checked = false;
+        }
+
+        if (editTrip.recurring === 'daily') {
+            bookingForm.recurring.value = 'daily';
+        } else if (editTrip.recurring === 'weekdays') {
+            bookingForm.recurring.value = 'weekdays';
+        } else if (editTrip.recurring === 'weekends') {
+            bookingForm.recurring.value = 'weekends';
+        } else if (editTrip.recurring === 'weekly') {
+            bookingForm.recurring.value = 'weekly';
+        } else if (editTrip.recurring === 'monthly') {
+            bookingForm.recurring.value = 'monthly';
+        } else {
+            bookingForm.recurring.value = "";
+        }
+    }
+
+
+
+
+}
 
 
 
@@ -119,7 +228,7 @@ if (bookingForm) {
         const assistant = bookingForm.assistant.checked;
         const otherAidMessage = bookingForm.otherAidMessage.value;
 
-        const companions = bookingForm.companion.value;
+        const companions = bookingForm.companions.value;
         const pet = bookingForm.pet.checked;
         const baggage = bookingForm.baggage.checked;
         const recurring = bookingForm.recurring.value;
@@ -173,10 +282,26 @@ if (bookingForm) {
             return;
         }
 
+        //Vilket id som ska användas nytt eller befintligt(vid ombokning)
+        let bookingId = "";
+
+        if (editId) {
+            //Id sätt till ombokningsid
+            bookingId = Number(editId);
+
+            //Letar upp och tar bort den gamla uppgifterna på från arrayen
+            bookings = bookings.filter(trip => trip.ticketId !== Number(editId));
+
+            //Rensar local storage innan nya bokningen görs
+            localStorage.removeItem('rebookTrip');
+        } else {
+            //Om ny bokning ska göras sätts ett nytt bokningsnummer
+            bookingId = Date.now()
+        }
 
         //Skapar nytt objekt med värden från bokningen
         const newBooking = {
-            ticketId: Date.now(),
+            ticketId: bookingId,
             tripType: tripTypeInput,
             from: fromInput,
             to: toInput,
@@ -193,17 +318,26 @@ if (bookingForm) {
 
         };
 
-        //Lägger till nya bokningen i bokningsarrayen.
+        //Lägger till bokningen/uppdatera bokningen
         bookings.push(newBooking);
-
-        //Spara till local storage
         localStorage.setItem('bookings', JSON.stringify(bookings));
 
+        //Kontrollerar och skickar användaren till rätt bekräftelsesidan
+        if (editId) {
+            window.location.href = '/ombokad-resa.html';
 
-        bookingForm.submit();
+        } else {
+            window.location.href = '/bokad-resa.html';
 
+        }
     });
+
 }
+
+
+
+
+
 /* Avboka resan */
 function cancelBooking(ticketId) {
     //Om ticketId inte finns, avbryt funktionen
@@ -226,7 +360,7 @@ function cancelBooking(ticketId) {
 }
 
 function printTicket() {
-    //Kontroll att diven trips finns
+    //Kontroll att div:en trips finns
     if (trips) {
 
         //Rensar tidigare innehåll innan ny bokning läggs till
@@ -304,7 +438,7 @@ function printTicket() {
                 recurringTrips = `<p>Vardagar (måndag - fredag)</p>`;
             } else if (trip.recurring === "weekends") {
                 recurringTrips = `<p>Helger (lördag - söndag)</p>`;
-            } else if (trip.recurring === "weeklys") {
+            } else if (trip.recurring === "weekly") {
                 recurringTrips = `<p>Samma datum och tid varje vecka</p>`;
             } else if (trip.recurring === "monthly") {
                 recurringTrips = `<p>Samma datum och tid varje månad</p>`;
@@ -334,7 +468,7 @@ function printTicket() {
 
                     <div class="buttons-change-cancel">
                     <button class="change-booking" name="changeButton" value="Omboka resa"
-                    aria-label="Omboka resa" aria-label="Boka resa"> <span
+                    aria-label="Omboka resa" data-id="${trip.ticketId}"> <span
                     class="material-symbols-outlined">change_circle</span>Omboka resa</button>
 
                     <button class="cancel-booking" name="cancelButton" value="Avboka resa"
