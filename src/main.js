@@ -23,35 +23,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     });
+
+
+    //Anropar funktionerna för att skriva ut biljetterna till sidan
+    printTicket();
+    printTicketIndex();
+
+
+
     //Hämtar innehållet för alla bokningar i diven med id trips
     const allTrips = document.querySelector('#trips');
-    //Om det inte finns något i trips görs ingenting.
-    if (!allTrips) {
-        return
+    //Kontroll att div:en trips finns
+    if (allTrips) {
+
+
+        //Lyssnar på klick i diven
+        allTrips.addEventListener('click', (event) => {
+
+            //Kontroll att klickat element har klassen cancel-booking
+            if (event.target.classList.contains('cancel-booking')) {
+
+
+                //Hämtar ticketId från knappen för resan
+                let ticketId = event.target.getAttribute('data-id');
+
+                cancelBooking(ticketId);
+
+                //Kontroll att klickat element har klassen change-booking
+            } else if (event.target.classList.contains('change-booking')) {
+                //Hämtar ticketId från knappen för resan
+                let ticketId = event.target.getAttribute('data-id');
+
+                changeBooking(ticketId)
+
+
+            }
+        });
+
     }
-
-    //Lyssnar på klick i diven
-    allTrips.addEventListener('click', (event) => {
-
-        //Kontroll att klickat element har klassen cancel-booking
-        if (event.target.classList.contains('cancel-booking')) {
-
-
-            //Hämtar ticketId från knappen för resan
-            let ticketId = event.target.getAttribute('data-id');
-
-            cancelBooking(ticketId);
-
-            //Kontroll att klickat element har klassen change-booking
-        } else if (event.target.classList.contains('change-booking')) {
-            //Hämtar ticketId från knappen för resan
-            let ticketId = event.target.getAttribute('data-id');
-
-            changeBooking(ticketId)
-
-
-        }
-    });
 
 
 });
@@ -210,7 +219,7 @@ if (editTrip) {
 
 /*Bokningsfomulär*/
 const bookingForm = document.querySelector('#booking-form');
-const trips = document.querySelector('#trips');
+
 if (bookingForm) {
     bookingForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -360,13 +369,16 @@ function cancelBooking(ticketId) {
 }
 
 function printTicket() {
+    const trips = document.querySelector('.my-bookings #trips');
+
+
     //Kontroll att div:en trips finns
     if (trips) {
 
         //Rensar tidigare innehåll innan ny bokning läggs till
         trips.innerHTML = "";
 
-        bookings.forEach((trip) => {
+        bookings.forEach(trip => {
 
             let tripTypeText;
 
@@ -451,7 +463,7 @@ function printTicket() {
 
             //Skaper HTML-element och skriver ut till DOM
             const tripDetails = `
-                <article class="booking-details">
+                <article class="booking-details" id="${trip.ticketId}">
                     <h3>Biljett: #${trip.ticketId}</h3>
                     <p><strong>Typ av resa:</strong> ${tripTypeText}</p>
                     <p><strong>Från:</strong> ${trip.from}</p>
@@ -467,28 +479,71 @@ function printTicket() {
                     ${recurringTrips}
 
                     <div class="buttons-change-cancel">
-                    <button class="change-booking" name="changeButton" value="Omboka resa"
-                    aria-label="Omboka resa" data-id="${trip.ticketId}"> <span
-                    class="material-symbols-outlined">change_circle</span>Omboka resa</button>
+                    <button class="change-booking" name="changeButton" data-id="${trip.ticketId}"> <span
+                    class="material-symbols-outlined" alt="">change_circle</span>Omboka resa</button>
 
-                    <button class="cancel-booking" name="cancelButton" value="Avboka resa"
-                    aria-label="Avboka resa" aria-label="Boka resa" data-id="${trip.ticketId}"> <span
-                    class="material-symbols-outlined">cancel</span>Avboka resa</button>
+                    <button class="cancel-booking" name="cancelButton"data-id="${trip.ticketId}"> <span
+                    class="material-symbols-outlined" alt="">cancel</span>Avboka resa</button>
                 </article>`;
 
             //Lägger till bokningen i trips.
             trips.innerHTML += tripDetails;
         });
 
-
-
-
     }
 
 }
-printTicket();
 
 
+function printTicketIndex() {
+    const trips = document.querySelector('.index-booking #trips');
+    if (trips) {
+
+        trips.innerHTML = "";
+
+        bookings.forEach((trip) => {
+            let tripTypeText;
+
+            //Skriver ut enkel resa eller tur och retur med rätt ikon beroende på val.
+            if (trip.tripType === "return") {
+                tripTypeText = '<span class="material-symbols-outlined">sync_alt</span> Tur och retur';
+            } else {
+                tripTypeText = '<span class="material-symbols-outlined">trending_flat</span> Enkel resa';
+            }
+
+            let departureTime = formattedDateTime(trip.departure);
+            let returningTime = formattedDateTime(trip.returning);
+
+
+            let returnText = "";
+            if (trip.returning) {
+                returnText = `<p><strong>Återresa:</strong> ${returningTime}</p>`;
+            }
+
+
+            const tripDetailsIndex = `
+            <article class="trip-item">
+                    <h3>Biljett: #${trip.ticketId}</h3>
+                    <p><strong>Typ av resa:</strong> ${tripTypeText}</p>
+                    <br>
+                    <p><strong>Från:</strong> ${trip.from}</p>
+                    <p><strong>Till:</strong> ${trip.to}</p>
+                    <br>
+                    <p><strong>Avresa:</strong> ${departureTime}</p>
+                    ${returnText}
+                    <br>
+                    <a href="/mina-bokade-resor#${trip.ticketId}"><img src="./icons/link.svg" alt="">Bokningsinformation</a>
+        </article>
+        
+        `
+            trips.innerHTML += tripDetailsIndex;
+
+
+
+        });
+    }
+
+}
 
 
 

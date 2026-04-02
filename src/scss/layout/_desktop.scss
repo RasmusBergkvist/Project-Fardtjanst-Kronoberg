@@ -29,8 +29,6 @@
 
 
 
-
-
 .index-booking {
     display: flex;
     flex-direction: column;
@@ -45,26 +43,29 @@
     .trips {
         display: flex;
         justify-content: center;
+        max-width: 900px;
+        width: 100%;
         gap: 1.5rem;
+        flex-wrap: wrap;
 
     }
 
     .trip-item {
         display: flex;
         flex-direction: column;
+        gap: 5px;
         min-height: 270px;
-        min-width: 350px;
+        max-width: 370px;
         border: 1.15px solid variables.$primary-color;
         border-radius: 10px;
         background-color: white;
-        padding: 1rem;
+        padding: 1.5rem;
 
 
     }
 }
 
-a,
-img {
+a, img {
     display: inline-flex;
     align-items: center;
     margin-top: auto;
@@ -74,8 +75,8 @@ img {
 
     &:hover {
         text-decoration: underline;
+        
     }
-
 
 }
 
@@ -149,8 +150,8 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: variables.$primary-color;
-    height: 150px;
-    line-height: 1;
+    height: 200px;
+    line-height: 0.8;
    
 
     h3 {
