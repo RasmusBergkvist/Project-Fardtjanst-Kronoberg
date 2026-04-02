@@ -403,6 +403,13 @@ form {
 
 }
 
+.page-faq {
+    .ingress {
+        text-align: center;
+       
+    }
+}
+
 .content-faq,
 .content-a11y,
 .content-contact {
@@ -410,7 +417,7 @@ form {
     flex-direction: column;
     gap: 0.5rem;
     padding-bottom: 3rem;
-    padding-inline: 0.5rem;
+    padding-inline: 1rem;
 
     h3 {
         margin-top: 1rem;
@@ -442,6 +449,8 @@ form {
     }
 }
 
+
+
 .contact-img {
     width: 100%;
     height: auto;
@@ -454,10 +463,14 @@ form {
 /******************** Mina sidor***********************/
 /****************************************************/
 .my-page {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto;
-    height: 65vh;
+    margin: 0 auto; 
+    padding: 1.5rem;
+    gap: 1rem;
+
 
     h2 {
         color: variables.$primary-color;
@@ -474,18 +487,30 @@ form {
 }
 
 
+
 .user-info,
 .service-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1rem;
 
 
     p {
         text-align: left;
 
     }
+
+}
+
+.user-info {
+    background-color: rgb(171, 191, 209);
+    border-radius: 10px;
+}
+
+.service-info {
+    background-color: rgb(219, 219, 191);
+    border-radius: 10px;
 }
 
 /*****************************************************/
@@ -498,7 +523,7 @@ form {
     justify-content: center;
     margin: 0 auto;
     max-width: 600px;
-    height: 75vh;
+    min-height: 100vh;
 
     h2 {
         color: variables.$primary-color;
@@ -525,8 +550,8 @@ form {
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    height: 80vh;
     gap: 15px;
+    padding-inline: 1.5rem;
 
 
     h2 {
@@ -536,9 +561,10 @@ form {
         padding-top: 2.5rem;
     }
 
-
-
-
+    .ingress {
+        text-align: center;
+    }
+    
 
     .new-booking {
         display: inline-flex;

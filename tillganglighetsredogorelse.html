@@ -57,7 +57,8 @@
 
             <section class="page-a11y">
                 <h2>Tillgänglighetsredogörelse</h2>
-                <p class="ingress">Färdtjänst Kronoberg står bakom den här webbplatsen. Vi vill att så många som möjligt ska kunna
+                <p class="ingress">Färdtjänst Kronoberg står bakom den här webbplatsen. Vi vill att så många som möjligt
+                    ska kunna
                     använda den. Här beskrivs hur webbplatsen Färdtjänst Kronoberg uppfyller lagen om tillgänglighet
                     till digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera
                     brister till oss så att vi kan åtgärda dem.</p>
@@ -87,11 +88,12 @@
                         som inte är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav,
                         meddela oss så att vi får veta att problemet finns.</p>
 
-                    <form class="form-a11y" action="/synpunkter-tillganglighet.html">
+                    <form class="form-a11y">
                         <fieldset>
                             <legend>Rapportera tillgänglighetsbrister</legend>
                             <label for="fullname">För- och efternamn</label>
-                            <input type="text" id="fullname" name="fullname" placeholder="Ex. Kalle Svesson" required>
+                            <input type="text" id="fullname" name="fullname" placeholder="Ex. Kalle Svesson">
+                            <span id="fullname-error" class="error-a11y" role="alert"></span>
 
                             <label for="phone">Telefonnummmer (070 - 123 45 67)</label>
                             <input type="tel" id="phone" name="phone" placeholder="Ex. 070 - 123 45 67">
@@ -100,18 +102,17 @@
                             <input type="email" id="epost" name="epost" placeholder="Din e-postadress">
 
                             <label for="url"> Vilken sida gäller det (länkadress) </label>
-                            <input type="text" id="url" name="url" placeholder="Ex. fardtjanstkronoberg.se/boka-resa"
-                                required>
+                            <input type="text" id="url" name="url" placeholder="Ex. fardtjanstkronoberg.se/boka-resa">
+                            <span id="url-error" class="error-a11y" role="alert"></span>
 
                             <label for="message">Meddelande</label>
                             <textarea id="message" name="message" rows="8"
-                                placeholder="Här skriver du vad som inte är tillgängligt på webbplasten."
-                                required></textarea>
+                                placeholder="Här skriver du vad som inte är tillgängligt på webbplasten."></textarea>
+                            <span id="message-error" class="error-a11y" role="alert"></span>
 
-                                <button type="submit" class="send-a11y-form" name="a11yButton" value="skicka"
-                                aria-label="Skicka">Skicka</button>
+                            <button type="submit" class="send-a11y-form" name="a11yButton">Skicka</button>
                         </fieldset>
-        
+
                     </form>
 
                     <h3>Tillsyn</h3>

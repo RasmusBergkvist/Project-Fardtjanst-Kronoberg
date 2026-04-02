@@ -88,8 +88,8 @@
     justify-content: end;
     flex-shrink: 0;
     gap: 0.4rem;
-    padding-right: 0.7rem;
-    margin-top: 0.2rem;
+    padding-right: 0.8rem;
+    margin-top: 0.3rem;
     text-decoration: none;
     color: variables.$text-color-dark;
     background-color: variables.$background-color;
@@ -155,4 +155,15 @@
 .error {
     color: #e82020;
     font-weight: 700;
+}
+
+.error-a11y {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+    color: #e82020;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    width: 80%;
 }

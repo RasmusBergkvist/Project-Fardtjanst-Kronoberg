@@ -244,31 +244,37 @@ if (bookingForm) {
 
 
 
-        //Rensar felmeddelande
-        document.getElementById('from-error').innerHTML = "";
-        document.getElementById('to-error').innerHTML = "";
-        document.getElementById('departure-error').innerHTML = "";
-        document.getElementById('returning-error').innerHTML = "";
+        //Felmeddelande
+        const fromError = document.getElementById('from-error');
+        const toError = document.getElementById('to-error')
+        const departureError = document.getElementById('departure-error');
+        const returningError = document.getElementById('returning-error');
 
+        //Rensar felmeddelande
+        fromError.innerHTML = "";
+        toError.innerHTML = "";
+        departureError.innerHTML = "";
+        returningError.innerHTML = "";
+ 
         let error = false;
 
         //Kontrollerar att adress är ifylld
         if (fromInput === "") {
-            document.getElementById('from-error').innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i adress för avresan';
+            fromError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i adress för avresan';
             error = true;
         }
 
         if (toInput === "") {
-            document.getElementById('to-error').innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i adress för återresan';
+            toError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i adress för återresan';
             error = true;
         }
         //Kontrollerar val av datum och tid för avresan
         if (departureInput === "") {
-            document.getElementById('departure-error').innerHTML = '<span class="material-symbols-outlined">error</span> Datum och tid för avresan saknas';
+            departureError.innerHTML = '<span class="material-symbols-outlined">error</span> Datum och tid för avresan saknas';
             error = true;
 
         } else if (new Date() > (new Date(departureInput))) {
-            document.getElementById('departure-error').innerHTML = '<span class="material-symbols-outlined">error</span> Resans datum eller tid har redan passerat';
+            departureError.innerHTML = '<span class="material-symbols-outlined">error</span> Resans datum eller tid har redan passerat';
             error = true;
 
         }
@@ -276,11 +282,11 @@ if (bookingForm) {
         //Kontrollerar val av datum och tid för återresan
         if (tripTypeInput === 'return') {
             if (returnInput === "") {
-                document.getElementById('returning-error').innerHTML = '<span class="material-symbols-outlined">error</span>  Datum och tid för återresan saknas';
+                returningError.innerHTML = '<span class="material-symbols-outlined">error</span>  Datum och tid för återresan saknas';
                 error = true;
             }
             else if (new Date(returnInput) <= (new Date(departureInput))) {
-                document.getElementById('returning-error').innerHTML = '<span class="material-symbols-outlined">error</span>  Återresan får inte vara tidigare än avresan';
+                returningError.innerHTML = '<span class="material-symbols-outlined">error</span>  Återresan får inte vara tidigare än avresan';
                 error = true;
 
             }
@@ -377,6 +383,10 @@ function printTicket() {
 
         //Rensar tidigare innehåll innan ny bokning läggs till
         trips.innerHTML = "";
+
+        if (bookings.length === 0) {
+            trips.innerHTML = '<p class ="ingress">Inga resor bokade.</p>';
+        }
 
         bookings.forEach(trip => {
 
@@ -497,9 +507,14 @@ function printTicket() {
 
 function printTicketIndex() {
     const trips = document.querySelector('.index-booking #trips');
+
     if (trips) {
 
         trips.innerHTML = "";
+
+        if (bookings.length === 0) {
+            trips.innerHTML = '<p class ="ingress">Inga resor bokade.</p>';
+        }
 
         bookings.forEach((trip) => {
             let tripTypeText;
@@ -576,8 +591,54 @@ function formattedDateTime(dateTimeInput) {
 }
 
 
+/* Tillgänglighetsformulär */
+const a11yForm = document.querySelector('.form-a11y');
+
+if (a11yForm) {
+    a11yForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
 
+        const fullname = document.getElementById('fullname').value;
+        const fullnameError = document.getElementById('fullname-error');
+
+        const url = document.getElementById('url').value;
+        const urlError = document.getElementById('url-error');
+
+        const message = document.getElementById('message').value;
+        const messageError = document.getElementById('message-error');
+
+        //Rensar felmeddelande 
+        fullnameError.innerHTML = "";
+        urlError.innerHTML = "";
+        messageError.innerHTML = "";
 
 
+        let a11yError = false;
 
+
+        //Rensar felmeddelenade 
+        if (fullname.length <= 4) {
+            fullnameError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i för- och efternamn';
+            a11yError = true;
+        }
+
+        if (url === "") {
+            urlError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i länkadress';
+            a11yError = true;
+        }
+
+        if (message === "") {
+            messageError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i meddelanderutan';
+            a11yError = true;
+        }
+
+
+        if (a11yError) {
+            return;
+        }
+
+        window.location.href = './synpunkter-tillganglighet.html';
+    });
+
+}

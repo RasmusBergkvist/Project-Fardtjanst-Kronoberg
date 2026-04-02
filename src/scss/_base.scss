@@ -26,6 +26,7 @@ body {
     min-height: 100vh;
     max-width: 1440px;
     margin: auto;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -33,6 +34,7 @@ body {
 
 main {
     background-color: variables.$background-color;
+    flex: 1;
      padding-bottom: 2rem;
 }
 
@@ -60,7 +62,7 @@ p {
 .ingress {
     font-weight: 600;
     font-size: 1.1rem;
-    text-align: center;
+    
 }
 
 
