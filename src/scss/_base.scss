@@ -83,3 +83,24 @@ span {
         text-decoration: none;
     }
 }
+
+input:focus,
+textarea:focus,
+select:focus,
+a:focus,
+button:focus {
+    outline: 2px solid black;
+    outline-offset: 4px;
+    border-radius: 15px;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+    outline: 2px solid black;
+    outline-offset: 4px;
+}
+
+
+
+
+

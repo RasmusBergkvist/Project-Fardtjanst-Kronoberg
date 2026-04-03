@@ -65,7 +65,8 @@
     }
 }
 
-a, img {
+a,
+img {
     display: inline-flex;
     align-items: center;
     margin-top: auto;
@@ -75,7 +76,7 @@ a, img {
 
     &:hover {
         text-decoration: underline;
-        
+
     }
 
 }
@@ -132,6 +133,7 @@ a, img {
 
             &:hover {
                 background-color: variables.$primary-color;
+                text-decoration: none;
             }
 
         }
@@ -150,9 +152,9 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: variables.$primary-color;
+    line-height: 0.7;
     height: 200px;
-    line-height: 0.8;
-   
+
 
     h3 {
         padding-block: 1rem;
@@ -164,6 +166,7 @@ footer {
             &:hover {
                 text-decoration: underline;
             }
+
         }
     }
 }
@@ -406,7 +409,7 @@ form {
 .page-faq {
     .ingress {
         text-align: center;
-       
+
     }
 }
 
@@ -467,7 +470,7 @@ form {
     flex-direction: column;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 1.5rem;
     gap: 1rem;
 
@@ -564,7 +567,7 @@ form {
     .ingress {
         text-align: center;
     }
-    
+
 
     .new-booking {
         display: inline-flex;

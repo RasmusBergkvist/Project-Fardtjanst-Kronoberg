@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projektarbete för kursen DT068G Webbanvändbarhet.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -83,9 +84,9 @@
                                 
                                 <span class="material-symbols-outlined">home_pin</span>
                                 <span>Åka från (adress och ort)</span>
-                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö">
+                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" aria-describedby="from-error">
                             </label>
-                            <span id="from-error" class="error" role="alert"></span>
+                            <span id="from-error" class="error" aria-live="polite"></span>
                             
 
 
@@ -93,17 +94,17 @@
                                 <span class="material-symbols-outlined">location_on</span>
                                 <span>Resa till (adress och ort)</span>
                                 <input type="text" id="to-address" name="to"
-                                    placeholder="Ex. Smultronvägen 55, Älmhult">
+                                    placeholder="Ex. Smultronvägen 55, Älmhult" aria-describedby="to-error">
                             </label>
-                            <span id="to-error" class="error"></span>
+                            <span id="to-error" class="error" aria-live="polite"></span>
 
 
                             <label for="departure-time">
                                 <span class="material-symbols-outlined">calendar_month</span>
                                 <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="departure-time" name="departure">
+                                <input type="datetime-local" id="departure-time" name="departure" aria-describedby="departure-error">
                             </label>
-                            <span id="departure-error" class="error"></span>
+                            <span id="departure-error" class="error" aria-live="polite"></span>
                         </div>
 
 
@@ -112,9 +113,9 @@
                             <label for="return-time">
                                 <span class="material-symbols-outlined">calendar_month</span>
                                 <span>Välj datum och tid för återresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="return-time" name="returning">
+                                <input type="datetime-local" id="return-time" name="returning" aria-describedby="returning-error">
                             </label>
-                            <span id="returning-error" class="error"></span>
+                            <span id="returning-error" class="error" aria-live="polite"></span>
 
                         </div>
                     </fieldset>
@@ -182,7 +183,7 @@
                         </select>
                     </fieldset>
                 <button type="submit" class="change-booking-center" name="changeButton" value="Omboka resa"
-                    aria-label="Omboka resa" aria-label="Boka resa"> <span
+                    aria-label="Omboka resa"> <span
                     class="material-symbols-outlined">change_circle</span>Omboka resa</button>
                 </form>
 

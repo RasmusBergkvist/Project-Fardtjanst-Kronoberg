@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projektarbete för kursen DT068G Webbanvändbarhet.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -88,27 +89,31 @@
                         som inte är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav,
                         meddela oss så att vi får veta att problemet finns.</p>
 
-                    <form class="form-a11y">
+                    <form class="form-a11y" autocomplete="on">
                         <fieldset>
                             <legend>Rapportera tillgänglighetsbrister</legend>
                             <label for="fullname">För- och efternamn</label>
-                            <input type="text" id="fullname" name="fullname" placeholder="Ex. Kalle Svesson">
-                            <span id="fullname-error" class="error-a11y" role="alert"></span>
+                            <input type="text" id="fullname" name="fullname"
+                                placeholder="Skriv ditt för- och efternamn här" aria-describedby="fullname-error" autocomplete="name">
+                            <span id="fullname-error" class="error-a11y" aria-live="polite"></span>
 
                             <label for="phone">Telefonnummmer (070 - 123 45 67)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Ex. 070 - 123 45 67">
+                            <input type="tel" id="phone" name="phone"
+                                placeholder="Skriv ditt telefonnumer här (ex. 070 - 123 45 67)" autocomplete="tel">
 
-                            <label for="epost">E-post:</label>
-                            <input type="email" id="epost" name="epost" placeholder="Din e-postadress">
+                            <label for="epost">E-post (ex. kalle.svensson@epost.se)</label>
+                            <input type="email" id="epost" name="epost" placeholder="Skriv din e-postadress här" autocomplete="email">
 
-                            <label for="url"> Vilken sida gäller det (länkadress) </label>
-                            <input type="text" id="url" name="url" placeholder="Ex. fardtjanstkronoberg.se/boka-resa">
-                            <span id="url-error" class="error-a11y" role="alert"></span>
+                            <label for="url"> Vilken sida gäller det (ex. fardtjanstkronoberg.se/boka-resa)</label>
+                            <input type="text" id="url" name="url" placeholder="Skriv eller klistra in länkadressen här"
+                                aria-describedby="url-error">
+                            <span id="url-error" class="error-a11y" aria-live="polite"></span>
 
-                            <label for="message">Meddelande</label>
+                            <label for="message">Beskriv vad som inte är tillgängligt</label>
                             <textarea id="message" name="message" rows="8"
-                                placeholder="Här skriver du vad som inte är tillgängligt på webbplasten."></textarea>
-                            <span id="message-error" class="error-a11y" role="alert"></span>
+                                placeholder="Här skriver du vad som inte är tillgängligt på webbplasten."
+                                aria-describedby="message-error"></textarea>
+                            <span id="message-error" class="error-a11y" aria-live="polite"></span>
 
                             <button type="submit" class="send-a11y-form" name="a11yButton">Skicka</button>
                         </fieldset>
