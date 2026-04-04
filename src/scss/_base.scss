@@ -26,7 +26,7 @@ body {
     min-height: 100vh;
     max-width: 1440px;
     margin: auto;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -35,7 +35,7 @@ body {
 main {
     background-color: variables.$background-color;
     flex: 1;
-     padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 h1 {
@@ -62,7 +62,7 @@ p {
 .ingress {
     font-weight: 600;
     font-size: 1.1rem;
-    
+
 }
 
 
@@ -90,7 +90,7 @@ select:focus-visible,
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid black;
-    outline-offset: 4px;
+    outline-offset: 5px;
     border-radius: 15px;
 }
 
@@ -99,8 +99,3 @@ input[type="radio"]:focus {
     outline: 2px solid black;
     outline-offset: 4px;
 }
-
-
-
-
-

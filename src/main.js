@@ -4,7 +4,7 @@ import './scss/main.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
+/* Mobilmeny */
     const menuButton = document.getElementById('mobile-menu');
     const menu = document.getElementById('menu');
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.toggle('active')
 
         const isOpen = menu.classList.contains('active');
-
+        //*Ändrar symbol om beroende på om menyn är öppen eller stängd.
         if (isOpen) {
             menuButton.innerHTML = '✕';
             menuButton.setAttribute('aria-label', 'Stäng menyn');
@@ -255,7 +255,7 @@ if (bookingForm) {
         toError.innerHTML = "";
         departureError.innerHTML = "";
         returningError.innerHTML = "";
- 
+
         let error = false;
 
         //Kontrollerar att adress är ifylld
@@ -301,7 +301,7 @@ if (bookingForm) {
         let bookingId = "";
 
         if (editId) {
-            //Id sätt till ombokningsid
+            //Id sätts till ombokningsid
             bookingId = Number(editId);
 
             //Letar upp och tar bort den gamla uppgifterna på från arrayen
@@ -471,7 +471,7 @@ function printTicket() {
                 recurringTripsHeading = `<h4>Återkommande resor:</h4>`;
             }
 
-            //Skaper HTML-element och skriver ut till DOM
+            //Skapar HTML-element och skriver ut till DOM
             const tripDetails = `
                 <article class="booking-details" id="${trip.ticketId}">
                     <h3>Biljett: #${trip.ticketId}</h3>
@@ -504,12 +504,13 @@ function printTicket() {
 
 }
 
-
+/*Biljettinformation på startsidan */
 function printTicketIndex() {
     const trips = document.querySelector('.index-booking #trips');
-
+    //Kontroll att div:en trips finns
     if (trips) {
 
+        //Rensar tidigare innehåll innan ny bokning läggs till
         trips.innerHTML = "";
 
         if (bookings.length === 0) {
@@ -536,6 +537,7 @@ function printTicketIndex() {
             }
 
 
+            //Skapar HTML-element och skriver ut till DOM
             const tripDetailsIndex = `
             <article class="trip-item">
                     <h3>Biljett: #${trip.ticketId}</h3>
@@ -598,7 +600,7 @@ if (a11yForm) {
     a11yForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-
+        //Hämtar inpurvärde och element från felmeddelande.
         const fullname = document.getElementById('fullname').value;
         const fullnameError = document.getElementById('fullname-error');
 
@@ -617,27 +619,27 @@ if (a11yForm) {
         let a11yError = false;
 
 
-        //Rensar felmeddelenade 
+        //Kontroll att namn är ifyllt.
         if (fullname.length <= 4) {
             fullnameError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i för- och efternamn';
             a11yError = true;
         }
-
+        //Kontroll att url är  ifyllt.
         if (url === "") {
             urlError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i länkadress';
             a11yError = true;
         }
-
+        //Kontroll att meddelande är  ifyllt.
         if (message === "") {
             messageError.innerHTML = '<span class="material-symbols-outlined">error</span> Fyll i meddelanderutan';
             a11yError = true;
         }
 
-
+        //Om fel, avbryt.
         if (a11yError) {
             return;
         }
-
+        //Om allt är rätt ifyllt, skicka till bekräftelsesidan
         window.location.href = './synpunkter-tillganglighet.html';
     });
 
