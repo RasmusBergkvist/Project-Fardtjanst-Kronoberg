@@ -84,11 +84,11 @@ span {
     }
 }
 
-input:focus,
-textarea:focus,
-select:focus,
-a:focus,
-button:focus {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible,
+button:focus-visible {
     outline: 2px solid black;
     outline-offset: 4px;
     border-radius: 15px;

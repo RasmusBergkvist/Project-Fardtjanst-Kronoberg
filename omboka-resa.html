@@ -67,13 +67,13 @@
                         <div class="radio-style">
                             <label for="trip-oneway">
                                 <input type="radio" id="trip-oneway" name="trip" value="oneway" checked>
-                                <span class="material-symbols-outlined">trending_flat</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">trending_flat</span>
                                 <span>Enkel resa</span>
                             </label>
 
                             <label for="trip-return">
                                 <input type="radio" id="trip-return" name="trip" value="return">
-                                <span class="material-symbols-outlined">sync_alt</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">sync_alt</span>
                                 <span>Tur och retur</span>
                             </label>
                         </div>
@@ -82,7 +82,7 @@
                             
                             <label for="from-address">
                                 
-                                <span class="material-symbols-outlined">home_pin</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">home_pin</span>
                                 <span>Åka från (adress och ort)</span>
                                 <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" aria-describedby="from-error">
                             </label>
@@ -91,7 +91,7 @@
 
 
                             <label for="to-address">
-                                <span class="material-symbols-outlined">location_on</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
                                 <span>Resa till (adress och ort)</span>
                                 <input type="text" id="to-address" name="to"
                                     placeholder="Ex. Smultronvägen 55, Älmhult" aria-describedby="to-error">
@@ -100,7 +100,7 @@
 
 
                             <label for="departure-time">
-                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
                                 <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
                                 <input type="datetime-local" id="departure-time" name="departure" aria-describedby="departure-error">
                             </label>
@@ -111,7 +111,7 @@
 
                         <div id="returning-trip" class="hidden">
                             <label for="return-time">
-                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
                                 <span>Välj datum och tid för återresa i kaledern nedanför</span>
                                 <input type="datetime-local" id="return-time" name="returning" aria-describedby="returning-error">
                             </label>

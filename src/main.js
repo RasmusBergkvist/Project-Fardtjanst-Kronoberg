@@ -394,9 +394,9 @@ function printTicket() {
 
             //Skriver ut enkel resa eller tur och retur med rätt ikon beroende på val.
             if (trip.tripType === "return") {
-                tripTypeText = '<span class="material-symbols-outlined">sync_alt</span> Tur och retur';
+                tripTypeText = '<span class="material-symbols-outlined" aria-hidden="true">sync_alt</span> Tur och retur';
             } else {
-                tripTypeText = '<span class="material-symbols-outlined">trending_flat</span> Enkel resa';
+                tripTypeText = '<span class="material-symbols-outlined" aria-hidden="true">trending_flat</span> Enkel resa';
             }
 
             //Formatering av datum och tid
@@ -490,10 +490,10 @@ function printTicket() {
 
                     <div class="buttons-change-cancel">
                     <button class="change-booking" name="changeButton" data-id="${trip.ticketId}"> <span
-                    class="material-symbols-outlined" alt="">change_circle</span>Omboka resa</button>
+                    class="material-symbols-outlined" aria-hidden="true">change_circle</span>Omboka resa</button>
 
                     <button class="cancel-booking" name="cancelButton"data-id="${trip.ticketId}"> <span
-                    class="material-symbols-outlined" alt="">cancel</span>Avboka resa</button>
+                    class="material-symbols-outlined" aria-hidden="true">cancel</span>Avboka resa</button>
                 </article>`;
 
             //Lägger till bokningen i trips.
@@ -521,9 +521,9 @@ function printTicketIndex() {
 
             //Skriver ut enkel resa eller tur och retur med rätt ikon beroende på val.
             if (trip.tripType === "return") {
-                tripTypeText = '<span class="material-symbols-outlined">sync_alt</span> Tur och retur';
+                tripTypeText = '<span class="material-symbols-outlined" aria-hidden="true">sync_alt</span> Tur och retur';
             } else {
-                tripTypeText = '<span class="material-symbols-outlined">trending_flat</span> Enkel resa';
+                tripTypeText = '<span class="material-symbols-outlined" aria-hidden="true">trending_flat</span> Enkel resa';
             }
 
             let departureTime = formattedDateTime(trip.departure);
