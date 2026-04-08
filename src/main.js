@@ -549,7 +549,7 @@ function printTicketIndex() {
                     <p><strong>Avresa:</strong> ${departureTime}</p>
                     ${returnText}
                     <br>
-                    <a href="/mina-bokade-resor#${trip.ticketId}"><img src="./icons/link.svg" alt="">Bokningsinformation</a>
+                    <a href="/mina-bokade-resor#${trip.ticketId}"><img src="./icons/link.svg" alt="ikon med en länkkedja">Bokningsinformation</a>
         </article>
         
         `

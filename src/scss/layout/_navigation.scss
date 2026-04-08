@@ -54,7 +54,8 @@ nav {
     }
 
     &.current-page {
-        background-color: rgb(85, 138, 85);
+        background-color: rgb(167, 207, 167);
+        color: variables.$text-color-dark;
         border-radius: 15px;
     }
 

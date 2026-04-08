@@ -102,7 +102,8 @@
 
                             <label for="departure-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
+                                <span class="span-label">Välj datum och tid för avresan</span>
+                                <p>Klicka på kalendern i fältet nedanför</p>
                                 <input type="datetime-local" id="departure-time" name="departure"
                                     aria-describedby="departure-error">
                             </label>
@@ -114,7 +115,8 @@
                         <div id="returning-trip" class="hidden">
                             <label for="return-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span>Välj datum och tid för återresa i kaledern nedanför</span>
+                                <span>Välj datum och tid för återresan</span>
+                                <p>Klicka på kalendern i fältet nedanför</p>
                                 <input type="datetime-local" id="return-time" name="returning"
                                     aria-describedby="returning-error">
                             </label>
@@ -150,7 +152,9 @@
 
                     <fieldset>
                         <legend>Önskemål eller behov (valfritt)</legend>
-
+                        <p>Här kan du ange önskemål till din resa, till exempel medresenärer (familj, vänner eller
+                            bekanta). Ledsagare räknas inte som medresenär och anges separat under
+                            hjälpmedel.</p>
 
                         <label for="number-companion">
                             Antal medresenärer
@@ -173,7 +177,7 @@
                     <fieldset>
                         <legend>Återkommande resor (valfritt)</legend>
                         <p>Om din resa återkommer vid samma tid och dag under en period kan du fylla i detta här -
-                            annars kan du lämna fältet tomt.</p>
+                            annars kan du lämna fältet tomt. För övriga alternativ, vänligen kontakta Färdtjänst Kronoberg.</p>
 
                         <label for="recurring"> Typ av återkommande resa</label>
                         <select name="recurring" id="recurring">
@@ -186,7 +190,7 @@
                         </select>
                     </fieldset>
                     <button type="submit" class="booking" name="bookButton" value="Boka resa">
-                        <img src="./icons/ticket.svg" alt=""> Boka resa
+                        <img src="./icons/ticket.svg" alt="ikon med en biljett"> Boka resa
                     </button>
                 </form>
 

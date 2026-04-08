@@ -75,7 +75,13 @@
     justify-content: center;
     flex-direction: column;
     color: variables.$text-color-light;
-    text-shadow: 1px 1px 2px black;
+
+    h2 {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+    }
 
     a {
         @include green-button;
@@ -122,6 +128,7 @@
     @include green-button;
     display: flex;
     margin: 1rem auto;
+    
 }
 
 .change-booking-center{

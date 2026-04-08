@@ -79,30 +79,33 @@
                         </div>
 
                         <div class="trip-details">
-                            
+
                             <label for="from-address">
-                                
+
                                 <span class="material-symbols-outlined" aria-hidden="true">home_pin</span>
                                 <span>Åka från (adress och ort)</span>
-                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö" aria-describedby="from-error">
+                                <input type="text" id="from-address" name="from" placeholder="Ex. Storgatan 17, Växjö"
+                                    aria-describedby="from-error">
                             </label>
                             <span id="from-error" class="error" aria-live="polite"></span>
-                            
+
 
 
                             <label for="to-address">
                                 <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
                                 <span>Resa till (adress och ort)</span>
-                                <input type="text" id="to-address" name="to"
-                                    placeholder="Ex. Smultronvägen 55, Älmhult" aria-describedby="to-error">
+                                <input type="text" id="to-address" name="to" placeholder="Ex. Smultronvägen 55, Älmhult"
+                                    aria-describedby="to-error">
                             </label>
                             <span id="to-error" class="error" aria-live="polite"></span>
 
 
                             <label for="departure-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span class="span-label">Välj datum och tid för avresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="departure-time" name="departure" aria-describedby="departure-error">
+                                <span class="span-label">Välj datum och tid för avresan</span>
+                                <p>Klicka på kalendern i fältet nedanför</p>
+                                <input type="datetime-local" id="departure-time" name="departure"
+                                    aria-describedby="departure-error">
                             </label>
                             <span id="departure-error" class="error" aria-live="polite"></span>
                         </div>
@@ -112,8 +115,10 @@
                         <div id="returning-trip" class="hidden">
                             <label for="return-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span>Välj datum och tid för återresa i kaledern nedanför</span>
-                                <input type="datetime-local" id="return-time" name="returning" aria-describedby="returning-error">
+                                <span>Välj datum och tid för återesan</span>
+                                <p>Klicka på kalendern i fältet nedanför</p>
+                                <input type="datetime-local" id="return-time" name="returning"
+                                    aria-describedby="returning-error">
                             </label>
                             <span id="returning-error" class="error" aria-live="polite"></span>
 
@@ -147,6 +152,9 @@
 
                     <fieldset>
                         <legend>Önskemål eller behov (valfritt)</legend>
+                        <p>Här kan du ange önskemål till din resa, till exempel medresenärer (familj, vänner eller
+                            bekanta). Ledsagare räknas inte som medresenär och anges separat under
+                            hjälpmedel.</p>
 
 
                         <label for="number-companion">
@@ -170,7 +178,7 @@
                     <fieldset>
                         <legend>Återkommande resor (valfritt)</legend>
                         <p>Om din resa återkommer vid samma tid och dag under en period kan du fylla i detta här -
-                            annars kan du lämna fältet tomt.</p>
+                            annars kan du lämna fältet tomt. För övriga alternativ, vänligen kontakta Färdtjänst Kronoberg.</p>
 
                         <label for="recurring"> Typ av återkommande resa</label>
                         <select name="recurring" id="recurring">
@@ -182,9 +190,9 @@
                             <option value="monthly">Samma dag och tid varje månad</option>
                         </select>
                     </fieldset>
-                <button type="submit" class="change-booking-center" name="changeButton" value="Omboka resa"
-                    aria-label="Omboka resa"> <span
-                    class="material-symbols-outlined">change_circle</span>Omboka resa</button>
+                    <button type="submit" class="change-booking-center" name="changeButton" value="Omboka resa"
+                        aria-label="Omboka resa"> <span class="material-symbols-outlined">change_circle</span>Omboka
+                        resa</button>
                 </form>
 
             </section>
