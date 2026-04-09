@@ -224,7 +224,7 @@ form {
         display: flex;
         align-items: center;
         width: 80%;
-        font-weight: 400;
+        font-weight: 600;
         gap: 0.7rem;
         margin-top: 1rem;
         margin-bottom: 0.4rem;
@@ -290,6 +290,10 @@ form {
         padding: 0.8rem;
         border-radius: 10px;
 
+    }
+
+    input, select, textarea {
+        font-size: variables.$text-size;
     }
 
     #returning-trip,
@@ -404,6 +408,12 @@ form {
 
     }
 
+}
+
+.page-a11y {
+    .ingress {
+        padding-inline: 1rem;
+    }
 }
 
 .page-faq {

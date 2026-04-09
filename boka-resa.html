@@ -95,15 +95,15 @@
                                 <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
                                 <span>Resa till (adress och ort)</span>
                                 <input type="text" id="to-address" name="to" placeholder="Ex. Smultronvägen 55, Älmhult"
-                                    aria-describedby="to-error" autocomplete="street-address">
+                                    aria-describedby="to-error" autocomplete="address-level1">
                             </label>
                             <span id="to-error" class="error" aria-live="polite"></span>
 
 
                             <label for="departure-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span class="span-label">Välj datum och tid för avresan</span>
-                                <p>Klicka på kalendern i fältet nedanför</p>
+                                <span class="span-label">Välj datum och tid för avresan</span><br>
+                                <span class="span-text">Klicka på kalendern i fältet nedanför</span>
                                 <input type="datetime-local" id="departure-time" name="departure"
                                     aria-describedby="departure-error">
                             </label>
@@ -115,8 +115,8 @@
                         <div id="returning-trip" class="hidden">
                             <label for="return-time">
                                 <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
-                                <span>Välj datum och tid för återresan</span>
-                                <p>Klicka på kalendern i fältet nedanför</p>
+                                <span>Välj datum och tid för återresan</span><br>
+                                <span class="span-text">Klicka på kalendern i fältet nedanför</span>
                                 <input type="datetime-local" id="return-time" name="returning"
                                     aria-describedby="returning-error">
                             </label>
@@ -127,7 +127,7 @@
 
                     <fieldset>
                         <legend>Hjälpmedel (valfritt)</legend>
-                        <p>Välj alternativ om du behöver något hjälpmedel eller stöd på din resa</p>
+                        <p>Välj alternativ om du behöver något hjälpmedel eller stöd på din resa.</p>
 
                         <label for="wheelchair">
                             <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
@@ -146,7 +146,7 @@
 
 
                         <label for="other-aid-message">Annat hjälpmedel</label>
-                        <textarea id="other-aid-message" name="otherAidMessage" placeholder="Beskriv hjälpmedel"
+                        <textarea id="other-aid-message" name="otherAidMessage" placeholder="Beskriv vilket annat hjälpmedel som du vill ta med på resan. "
                             rows="5"></textarea>
                     </fieldset>
 
