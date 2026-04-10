@@ -12,6 +12,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 
     &:hover {
         background-color: variables.$primary-color;
